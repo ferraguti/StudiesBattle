@@ -5,11 +5,13 @@ package studiesbattle
 import grails.test.mixin.*
 import org.junit.*
 
+import studiesbattle.personne.Mur;
+
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-@TestFor(PageCours)
-class PageCoursTests {
+@TestFor(Mur)
+class MurTests {
 
     void testSomething() {
        fail "Implement me"
