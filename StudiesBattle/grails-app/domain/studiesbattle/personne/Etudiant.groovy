@@ -10,6 +10,8 @@ class Etudiant extends Personne{
 	
 	static belongsTo =  [parcours : Parcours]
 	static hasMany = [badges : Badge]
+	
     static constraints = {
+		age nullable: true, min: 13
     }
 }
