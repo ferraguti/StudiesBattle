@@ -8,5 +8,7 @@ class Parcours {
 	static hasManny = [matieres : Matiere, etudiants : Etudiant]
 
     static constraints = {
+		nom blank: false, unique: true
+		matieres minSize: 1
     }
 }

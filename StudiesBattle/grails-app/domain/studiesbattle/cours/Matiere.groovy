@@ -11,5 +11,8 @@ class Matiere {
 	static hasMany = [professeurs : Professeur, cours : Cours, etudiantsInscrit : Etudiant]
 
     static constraints = {
+		nom blank: false, unique: true
+		professeur minSize: 1
+		cours minSize: 1
     }
 }

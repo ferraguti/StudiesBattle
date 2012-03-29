@@ -6,8 +6,7 @@ class Cours {
 	//tp, td, cours
 	
 	String nom
-	int heures
-	float coefficient
+	float heures, coefficient
 
 	static belongsTo = [matiere : Matiere]
 	static hasMany = [etudiantsPresents : Etudiant]
@@ -15,5 +14,7 @@ class Cours {
 	//nbr max eleve
 
     static constraints = {
+		heures min: 0.5
+		coefficient min: 0
     }
 }

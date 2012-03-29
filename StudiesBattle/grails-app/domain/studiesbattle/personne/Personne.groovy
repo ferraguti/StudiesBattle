@@ -1,7 +1,7 @@
 package studiesbattle.personne
 
 
-abstract class Personne {
+interface Personne {
 	String nom, prenom, pseudo, email
 	long id
 	char sexe
