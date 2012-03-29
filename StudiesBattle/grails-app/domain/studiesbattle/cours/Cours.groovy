@@ -14,8 +14,8 @@ class Cours {
 	//nbr max eleve
 
     static constraints = {
-		heures min: 0,25
-		coefficient min: 0
+		heures min: 0.25f
+		coefficient min: 0.0f
     }
 	
 	String toString(){
