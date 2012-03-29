@@ -1,7 +1,7 @@
 package studiesbattle.personne
 
 
-interface Personne {
+abstract class Personne {
 	String nom, prenom, pseudo, email
 	long id
 	char sexe
@@ -17,4 +17,15 @@ interface Personne {
 		sexe inList: ["M", "F"]
 		email email: true
     }
+	
+	String getFullName(){
+		return (nom.toUpperCase() + " " + prenom)
+	}
+	
+	String toString(){
+		if(pseudo.isEmpty())
+			return getFullName()
+		else
+			return pseudo
+	}
 }

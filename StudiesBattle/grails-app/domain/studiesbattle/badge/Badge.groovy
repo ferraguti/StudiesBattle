@@ -6,4 +6,8 @@ class Badge {
     static constraints = {
 		nom blank: false, unique: true
     }
+	
+	String toString(){
+		return nom
+	}
 }

@@ -9,6 +9,10 @@ class Parcours {
 
     static constraints = {
 		nom blank: false, unique: true
-		matieres minSize: 1
+		//matieres minSize: 1
     }
+	
+	String toString(){
+		return nom
+	}
 }

@@ -4,7 +4,7 @@ import studiesbattle.badge.Badge
 import studiesbattle.cours.Parcours
 
 
-class Etudiant implements Personne{
+class Etudiant extends Personne{
 	int age, points = 0
 	Mur profil
 	
