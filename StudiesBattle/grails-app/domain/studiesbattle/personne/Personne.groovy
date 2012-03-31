@@ -1,7 +1,7 @@
 package studiesbattle.personne
 
 
-abstract class Personne {
+class Personne {
 	String nom, prenom, pseudo, email
 	long id
 	char sexe
@@ -27,5 +27,11 @@ abstract class Personne {
 			return getFullName()
 		else
 			return pseudo
+	}
+	
+	void poster(String message, Personne cible){
+		//peut on poster sur son propre mur ?
+		cible.mur.poster(message, this)
+		
 	}
 }
