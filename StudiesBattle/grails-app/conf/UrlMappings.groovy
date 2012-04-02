@@ -6,7 +6,11 @@ class UrlMappings {
 				// apply constraints here
 			}
 		}
-
+		
+		//Deux ligne ajoute pour spring security
+		"/login/$action?"(controller: "login")
+		"/logout/$action?"(controller: "logout")
+		
 		"/"(view:"/index")
 		"500"(view:'/error')
 	}

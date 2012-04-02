@@ -1,7 +1,9 @@
 package studiesbattle.personne
 
+import org.example.User
 
-class Personne {
+
+class Personne extends User{
 	String nom, prenom, pseudo, email
 	long id
 	char sexe
