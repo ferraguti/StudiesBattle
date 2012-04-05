@@ -11,7 +11,6 @@ import studiesbattle.cours.Parcours
 class Etudiant extends Personne{
 	int age
 	float points = 0.0f
-	Mur profil
 	List badges
 	//list cours aller/rater
 	

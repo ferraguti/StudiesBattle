@@ -74,31 +74,6 @@
 	<g:field type="number" name="age" min="13" required="" value="${fieldValue(bean: etudiantInstance, field: 'age')}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
-		<g:message code="etudiant.accountExpired.label" default="Account Expired" />
-		
-	</label>
-	<g:checkBox name="accountExpired" value="${etudiantInstance?.accountExpired}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
-		<g:message code="etudiant.accountLocked.label" default="Account Locked" />
-		
-	</label>
-	<g:checkBox name="accountLocked" value="${etudiantInstance?.accountLocked}" />
-</div>
-
-
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'enabled', 'error')} ">
-	<label for="enabled">
-		<g:message code="etudiant.enabled.label" default="Enabled" />
-		
-	</label>
-	<g:checkBox name="enabled" value="${etudiantInstance?.enabled}" />
-</div>
-
 
 <div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'parcours', 'error')} required">
 	<label for="parcours">
@@ -106,14 +81,6 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="parcours" name="parcours.id" from="${studiesbattle.cours.Parcours.list()}" optionKey="id" required="" value="${etudiantInstance?.parcours?.id}" class="many-to-one"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'passwordExpired', 'error')} ">
-	<label for="passwordExpired">
-		<g:message code="etudiant.passwordExpired.label" default="Password Expired" />
-		
-	</label>
-	<g:checkBox name="passwordExpired" value="${etudiantInstance?.passwordExpired}" />
 </div>
 
 

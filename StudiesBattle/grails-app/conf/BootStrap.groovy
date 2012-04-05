@@ -12,7 +12,7 @@ class BootStrap {
 		}
 		
 		if(!Matiere.count()){
-			//Matiere jee = new Matiere("JEE", info).save(failOnError: true)
+			//new Matiere(nom: 'JEE', parcours: info).save(failOnError: true)
 		}
     }
     def destroy = {

@@ -68,11 +68,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${professeurInstance?.identifiant}">
+				<g:if test="${professeurInstance?.numNational}">
 				<li class="fieldcontain">
-					<span id="identifiant-label" class="property-label"><g:message code="professeur.identifiant.label" default="Identifiant" /></span>
+					<span id="numNational-label" class="property-label"><g:message code="professeur.numNational.label" default="numNational" /></span>
 					
-						<span class="property-value" aria-labelledby="identifiant-label"><g:fieldValue bean="${professeurInstance}" field="identifiant"/></span>
+						<span class="property-value" aria-labelledby="numNational-label"><g:fieldValue bean="${professeurInstance}" field="numNational"/></span>
 					
 				</li>
 				</g:if>

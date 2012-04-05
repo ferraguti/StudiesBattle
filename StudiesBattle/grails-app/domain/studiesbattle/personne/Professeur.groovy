@@ -8,10 +8,8 @@ import studiesbattle.cours.Matiere;
 class Professeur extends Personne{	
 	//doctorant
 	
-	static belongsTo = [matiere : Matiere]
 
     static constraints = {
-		//matieres minSize: 1
     }
 	
 	void donnerCours(Cours c){

@@ -28,21 +28,4 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: parcoursInstance, field: 'etudiantsInscrit', 'error')} ">
-	<label for="etudiant">
-		<g:message code="parcours.etudiantsInscrit.label" default="Etudiants Inscrit" />
-		
-	</label>
-
-<ul class="one-to-many">
-<g:each in="${parcoursInstance?.etudiantsInscrit?}" var="c">
-    <li><g:link controller="etudiant" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
-</g:each>
-<li class="add">
-<g:link controller="etudiant" action="create" params="['parcours.id': parcoursInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'etudiant.label', default: 'Matiere')])}</g:link>
-</li>
-</ul>
-
-</div>
-
 

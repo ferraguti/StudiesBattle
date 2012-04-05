@@ -178,14 +178,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${etudiantInstance?.profil}">
-				<li class="fieldcontain">
-					<span id="profil-label" class="property-label"><g:message code="etudiant.profil.label" default="Profil" /></span>
-					
-						<span class="property-value" aria-labelledby="profil-label"><g:link controller="mur" action="show" id="${etudiantInstance?.profil?.id}">${etudiantInstance?.profil?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
 			
 			</ol>
 			<g:form>

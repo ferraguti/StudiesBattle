@@ -42,12 +42,12 @@
 	<g:textField name="pseudo" value="${professeurInstance?.pseudo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'identifiant', 'error')} required">
-	<label for="identifiant">
-		<g:message code="professeur.identifiant.label" default="Identifiant" />
+<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'numNational', 'error')} required">
+	<label for="numNational">
+		<g:message code="professeur.numNational.label" default="numNational" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field type="number" name="identifiant" required="" value="${fieldValue(bean: professeurInstance, field: 'identifiant')}"/>
+	<g:field type="number" name="numNational" required="" value="${fieldValue(bean: professeurInstance, field: 'numNational')}"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'sexe', 'error')} required">
@@ -64,37 +64,5 @@
 		
 	</label>
 	<g:field type="email" name="email" value="${professeurInstance?.email}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
-		<g:message code="professeur.accountExpired.label" default="Account Expired" />
-		
-	</label>
-	<g:checkBox name="accountExpired" value="${professeurInstance?.accountExpired}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
-		<g:message code="professeur.accountLocked.label" default="Account Locked" />
-		
-	</label>
-	<g:checkBox name="accountLocked" value="${professeurInstance?.accountLocked}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'enabled', 'error')} ">
-	<label for="enabled">
-		<g:message code="professeur.enabled.label" default="Enabled" />
-		
-	</label>
-	<g:checkBox name="enabled" value="${professeurInstance?.enabled}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'passwordExpired', 'error')} ">
-	<label for="passwordExpired">
-		<g:message code="professeur.passwordExpired.label" default="Password Expired" />
-		
-	</label>
-	<g:checkBox name="passwordExpired" value="${professeurInstance?.passwordExpired}" />
 </div>
 
