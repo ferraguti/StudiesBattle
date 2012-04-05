@@ -5,13 +5,10 @@ import java.util.List;
 import studiesbattle.cours.Cours;
 import studiesbattle.cours.Matiere;
 
-class Professeur extends Personne{
-	List matieres
-	
+class Professeur extends Personne{	
 	//doctorant
 	
-	static hasMany = [matieres : Matiere]
-	static belongsTo = Matiere
+	static belongsTo = [matiere : Matiere]
 
     static constraints = {
 		//matieres minSize: 1
@@ -19,9 +16,10 @@ class Professeur extends Personne{
 	
 	void donnerCours(Cours c){
 		boolean inscritMatiere = false;
+		def profs = c.matiere.professeurs
 			
-		for(m in matieres){
-			if(m.equals(c.matiere))
+		for(p in profs){
+			if(p.equals(this))
 				inscritMatiere = true
 		}
 			

@@ -12,11 +12,11 @@ class Etudiant extends Personne{
 	int age
 	float points = 0.0f
 	Mur profil
-	List badges, matieres
+	List badges
 	//list cours aller/rater
 	
-	//static belongsTo = Matiere
-	static hasMany = [matieres : Matiere, badges : Badge]
+	static belongsTo = [parcours : Parcours]
+	static hasMany = [badges : Badge]
 	
     static constraints = {
 		age nullable: true, min: 13
