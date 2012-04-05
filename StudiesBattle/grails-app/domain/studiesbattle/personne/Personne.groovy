@@ -6,7 +6,7 @@ import org.example.User
 class Personne extends User{
 	String nom, prenom, pseudo, email
 	long identifiant
-	char sexe
+	String sexe
 	Mur mur
 	
 	//image
