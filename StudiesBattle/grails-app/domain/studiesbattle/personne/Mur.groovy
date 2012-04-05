@@ -1,5 +1,7 @@
 package studiesbattle.personne
 
+import java.util.List;
+
 
 class Mur {
 	List posts

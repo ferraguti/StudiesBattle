@@ -1,14 +1,19 @@
 package studiesbattle.cours
 
+import java.util.List;
+
 import studiesbattle.personne.Etudiant;
 import studiesbattle.personne.Professeur;
 
 class Matiere {
 	String nom
 	PageMatiere page
+	List cours
+	List professeurs
+	//List etudiantsInscrit
 	
 	static belongsTo = [parcours : Parcours]
-	static hasMany = [professeurs : Professeur, cours : Cours, etudiantsInscrit : Etudiant]
+	static hasMany = [cours : Cours, professeurs : Professeur]//, etudiantsInscrit : Etudiant]
 
     static constraints = {
 		nom blank: false, unique: true
@@ -23,3 +28,4 @@ class Matiere {
 		return (nom + " (" + parcours + ")")
 	}
 }
+

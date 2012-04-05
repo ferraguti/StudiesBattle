@@ -1,12 +1,14 @@
 package studiesbattle.cours
 
+import java.util.List;
+
 import studiesbattle.personne.Etudiant;
 
 class Parcours {
 	String nom
-	List matieres, etudiants
+	List matieres, etudiantsInscrit
 	
-	static hasManny = [matieres : Matiere, etudiants : Etudiant]
+	static hasManny = [matieres : Matiere, etudiantsInscrit : Etudiant]
 
     static constraints = {
 		nom blank: false, unique: true
