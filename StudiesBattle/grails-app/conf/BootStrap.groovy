@@ -1,3 +1,4 @@
+import studiesbattle.cours.Matiere
 import studiesbattle.cours.Parcours
 
 class BootStrap {
@@ -10,6 +11,9 @@ class BootStrap {
 			Parcours chimie = new Parcours("Chimie").save(failOnError: true)
 		}
 		
+		if(!Matiere.count()){
+			//Matiere jee = new Matiere("JEE", info).save(failOnError: true)
+		}
     }
     def destroy = {
     }

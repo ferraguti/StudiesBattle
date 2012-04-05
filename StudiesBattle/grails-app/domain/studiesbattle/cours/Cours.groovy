@@ -9,7 +9,7 @@ class Cours {
 	//tp, td, cours
 	
 	String nom
-	float heures, coefficient
+	float heures, coefficient //dans matière ?
 	Professeur prof
 	List etudiantsPresents
 
@@ -21,6 +21,7 @@ class Cours {
     static constraints = {
 		heures min: 0.25f
 		coefficient min: 0.0f
+		prof nullable: true
     }
 	
 	Cours(String nom, float heures, float coefficient, Matiere m) {

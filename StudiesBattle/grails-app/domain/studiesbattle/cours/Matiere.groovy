@@ -18,10 +18,17 @@ class Matiere {
     static constraints = {
 		nom blank: false, unique: true
 		page nullable: true
-		//professeur minSize: 1
-		//cours minSize: 1
     }
 	
+	Matiere(String nom, Parcours parcours){
+		this.nom = nom
+		this.parcours = parcours
+		
+		page = new PageMatiere(matiere: this)
+		cours = new ArrayList<Cours>()
+		professeurs = new ArrayList<Professeur>()
+		
+	}
 	
 	
 	String toString(){
