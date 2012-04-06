@@ -9,7 +9,8 @@ class Cours {
 	//tp, td, cours
 	
 	String nom
-	float heures, coefficient //dans matière ?
+	float heures = 2.0f
+	float coefficient = 1.0f//dans matière ?
 	Professeur prof
 	List etudiantsPresents
 

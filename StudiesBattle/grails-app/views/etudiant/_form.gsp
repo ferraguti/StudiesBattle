@@ -34,13 +34,6 @@
 	<g:textField name="prenom" required="" value="${etudiantInstance?.prenom}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'pseudo', 'error')} ">
-	<label for="pseudo">
-		<g:message code="etudiant.pseudo.label" default="Pseudo" />
-		
-	</label>
-	<g:textField name="pseudo" value="${etudiantInstance?.pseudo}"/>
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'sexe', 'error')} required">
 	<label for="sexe">

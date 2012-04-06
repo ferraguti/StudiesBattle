@@ -59,20 +59,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${professeurInstance?.pseudo}">
-				<li class="fieldcontain">
-					<span id="pseudo-label" class="property-label"><g:message code="professeur.pseudo.label" default="Pseudo" /></span>
-					
-						<span class="property-value" aria-labelledby="pseudo-label"><g:fieldValue bean="${professeurInstance}" field="pseudo"/></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${professeurInstance?.numNational}">
 				<li class="fieldcontain">
 					<span id="numNational-label" class="property-label"><g:message code="professeur.numNational.label" default="numNational" /></span>
 					
-						<span class="property-value" aria-labelledby="numNational-label"><g:fieldValue bean="${professeurInstance}" field="numNational"/></span>
+						<span class="property-value" aria-labelledby="numNational-label"><g:fieldValue bean="${professeurInstance}" field="Numero National"/></span>
 					
 				</li>
 				</g:if>

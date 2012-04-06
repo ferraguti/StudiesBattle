@@ -23,7 +23,6 @@ class Matiere {
 		this.nom = nom
 		this.parcours = parcours
 		page = new PageMatiere(matiere: this)
-		
 	}
 	
 	

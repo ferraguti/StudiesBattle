@@ -4,7 +4,7 @@ import org.example.User
 
 
 class Personne extends User{
-	String nom, prenom, pseudo, email
+	String nom, prenom, email
 	long numNational
 	String sexe
 	Mur mur
@@ -20,16 +20,10 @@ class Personne extends User{
 		mur nullable: true
     }
 	
-	String getFullName(){
+	String toString(){
 		return (nom.toUpperCase() + " " + prenom)
 	}
 	
-//	String toString(){
-//		if(pseudo.isEmpty())
-//			return getFullName()
-//		else
-//			return pseudo
-//	}
 	
 	void poster(String message, Personne cible){
 		cible.mur.poster(message, this)

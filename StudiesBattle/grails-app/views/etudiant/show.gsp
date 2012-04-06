@@ -59,20 +59,12 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${etudiantInstance?.pseudo}">
-				<li class="fieldcontain">
-					<span id="pseudo-label" class="property-label"><g:message code="etudiant.pseudo.label" default="Pseudo" /></span>
-					
-						<span class="property-value" aria-labelledby="pseudo-label"><g:fieldValue bean="${etudiantInstance}" field="pseudo"/></span>
-					
-				</li>
-				</g:if>
 			
-				<g:if test="${etudiantInstance?.identifiant}">
+				<g:if test="${etudiantInstance?.numNational}">
 				<li class="fieldcontain">
-					<span id="identifiant-label" class="property-label"><g:message code="etudiant.identifiant.label" default="Identifiant" /></span>
+					<span id="numNational-label" class="property-label"><g:message code="etudiant.numNational.label" default="Numero Etudiant" /></span>
 					
-						<span class="property-value" aria-labelledby="identifiant-label"><g:fieldValue bean="${etudiantInstance}" field="identifiant"/></span>
+						<span class="property-value" aria-labelledby="numNational-label"><g:fieldValue bean="${etudiantInstance}" field="numNational"/></span>
 					
 				</li>
 				</g:if>

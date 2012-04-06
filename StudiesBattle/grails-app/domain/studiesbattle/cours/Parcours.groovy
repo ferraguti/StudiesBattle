@@ -22,4 +22,10 @@ class Parcours {
 	String toString(){
 		return nom
 	}
+	
+	void addMatiere(Matiere m){
+		matieres.add(m)
+	}
+	
+	
 }

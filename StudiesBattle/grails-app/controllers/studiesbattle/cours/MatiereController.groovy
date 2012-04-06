@@ -26,9 +26,10 @@ class MatiereController {
             return
         }
 		
-		PageMatiere page = new PageMatiere(matiere: matiereInstance)
+		PageMatiere page = new PageMatiere(matiereInstance)
 		matiereInstance.setPage(page)
 		
+		//matiereInstance.parcours.addMatiere(matiereInstance)
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'matiere.label', default: 'Matiere'), matiereInstance.id])
         redirect(action: "show", id: matiereInstance.id)

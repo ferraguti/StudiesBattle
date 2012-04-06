@@ -32,14 +32,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${matiereInstance?.page}">
-				<li class="fieldcontain">
-					<span id="page-label" class="property-label"><g:message code="matiere.page.label" default="Page" /></span>
-					
-						<span class="property-value" aria-labelledby="page-label"><g:link controller="pageMatiere" action="show" id="${matiereInstance?.page?.id}">${matiereInstance?.page?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${matiereInstance?.cours}">
 				<li class="fieldcontain">
@@ -57,6 +49,15 @@
 					<span id="parcours-label" class="property-label"><g:message code="matiere.parcours.label" default="Parcours" /></span>
 					
 						<span class="property-value" aria-labelledby="parcours-label"><g:link controller="parcours" action="show" id="${matiereInstance?.parcours?.id}">${matiereInstance?.parcours?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+				
+				<g:if test="${matiereInstance?.page}">
+				<li class="fieldcontain">
+					<span id="page-label" class="property-label"><g:message code="matiere.page.label" default="Page" /></span>
+					
+						<span class="property-value" aria-labelledby="page-label"><g:link controller="pageMatiere" action="show" id="${matiereInstance?.page?.id}">${matiereInstance?.page?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -34,17 +34,10 @@
 	<g:textField name="prenom" required="" value="${professeurInstance?.prenom}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'pseudo', 'error')} ">
-	<label for="pseudo">
-		<g:message code="professeur.pseudo.label" default="Pseudo" />
-		
-	</label>
-	<g:textField name="pseudo" value="${professeurInstance?.pseudo}"/>
-</div>
 
 <div class="fieldcontain ${hasErrors(bean: professeurInstance, field: 'numNational', 'error')} required">
 	<label for="numNational">
-		<g:message code="professeur.numNational.label" default="numNational" />
+		<g:message code="professeur.numNational.label" default="Numero National" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field type="number" name="numNational" required="" value="${fieldValue(bean: professeurInstance, field: 'numNational')}"/>
