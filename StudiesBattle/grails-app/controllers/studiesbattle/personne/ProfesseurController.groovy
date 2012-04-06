@@ -28,7 +28,7 @@ class ProfesseurController {
             return
         }
 		
-		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save()
+		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save(failOnError:true)
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'professeur.label', default: 'Professeur'), professeurInstance.id])
         redirect(action: "show", id: professeurInstance.id)

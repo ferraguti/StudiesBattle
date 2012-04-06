@@ -1,5 +1,7 @@
 package studiesbattle.personne
 
+import org.example.UserRole
+import org.example.Role
 import org.springframework.dao.DataIntegrityViolationException
 
 class EtudiantController {
@@ -26,6 +28,8 @@ class EtudiantController {
             return
         }
 
+		new UserRole(user: professeurInstance, role: Role.findByAuthority("Etudiant")).save(failOnError:true)
+		
 		flash.message = message(code: 'default.created.message', args: [message(code: 'etudiant.label', default: 'Etudiant'), etudiantInstance.id])
         redirect(action: "show", id: etudiantInstance.id)
     }
