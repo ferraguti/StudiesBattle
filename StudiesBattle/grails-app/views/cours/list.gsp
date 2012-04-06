@@ -24,15 +24,15 @@
 				<thead>
 					<tr>
 					
-						<th><g:message code="cours.matiere.label" default="Matiere" /></th>
-					
 						<g:sortableColumn property="nom" title="${message(code: 'cours.nom.label', default: 'Nom')}" />
 					
-						<th><g:message code="cours.prof.label" default="Prof" /></th>
+						<th><g:message code="cours.matiere.label" default="Matiere" /></th>
 						
 						<g:sortableColumn property="heures" title="${message(code: 'cours.heures.label', default: 'Heures')}" />
 					
 						<g:sortableColumn property="coefficient" title="${message(code: 'cours.coefficient.label', default: 'Coefficient')}" />
+						
+						<th><g:message code="cours.prof.label" default="Prof" /></th>
 					
 					</tr>
 				</thead>
@@ -40,13 +40,13 @@
 				<g:each in="${coursInstanceList}" status="i" var="coursInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${coursInstance.id}">${fieldValue(bean: coursInstance, field: "heures")}</g:link></td>
-					
-						<td>${fieldValue(bean: coursInstance, field: "coefficient")}</td>
-					
+						<td><g:link action="show" id="${coursInstance.id}">${fieldValue(bean: coursInstance, field: "nom")}</g:link></td>
+						
 						<td>${fieldValue(bean: coursInstance, field: "matiere")}</td>
-					
-						<td>${fieldValue(bean: coursInstance, field: "nom")}</td>
+						
+						<td>${fieldValue(bean: coursInstance, field: "heures")}</td>
+						
+						<td>${fieldValue(bean: coursInstance, field: "coefficient")}</td>
 					
 						<td>${fieldValue(bean: coursInstance, field: "prof")}</td>
 					
