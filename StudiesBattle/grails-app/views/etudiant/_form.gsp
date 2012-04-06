@@ -42,14 +42,6 @@
 	<g:textField name="pseudo" value="${etudiantInstance?.pseudo}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'identifiant', 'error')} required">
-	<label for="identifiant">
-		<g:message code="etudiant.identifiant.label" default="Identifiant" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="identifiant" required="" value="${fieldValue(bean: etudiantInstance, field: 'identifiant')}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'sexe', 'error')} required">
 	<label for="sexe">
 		<g:message code="etudiant.sexe.label" default="Sexe" />
