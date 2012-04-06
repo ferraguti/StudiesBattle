@@ -7,7 +7,7 @@ class Personne extends User{
 	String nom, prenom, pseudo, email
 	long numNational
 	String sexe
-	Mur mur = new Mur(proprietaire: this)
+	Mur mur
 	
 	//image
 

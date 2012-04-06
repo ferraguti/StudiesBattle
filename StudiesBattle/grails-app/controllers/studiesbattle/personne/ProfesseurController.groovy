@@ -25,6 +25,9 @@ class ProfesseurController {
             render(view: "create", model: [professeurInstance: professeurInstance])
             return
         }
+		
+		Mur m = new Mur(proprietaire: professeurInstance)
+		professeurInstance.setMur(m)
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'professeur.label', default: 'Professeur'), professeurInstance.id])
         redirect(action: "show", id: professeurInstance.id)

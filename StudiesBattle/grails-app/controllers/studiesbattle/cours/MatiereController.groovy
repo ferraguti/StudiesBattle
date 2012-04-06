@@ -25,6 +25,10 @@ class MatiereController {
             render(view: "create", model: [matiereInstance: matiereInstance])
             return
         }
+		
+		PageMatiere page = new PageMatiere(matiere: matiereInstance)
+		matiereInstance.setPage(page)
+		
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'matiere.label', default: 'Matiere'), matiereInstance.id])
         redirect(action: "show", id: matiereInstance.id)
@@ -37,7 +41,7 @@ class MatiereController {
             redirect(action: "list")
             return
         }
-
+	
         [matiereInstance: matiereInstance]
     }
 
