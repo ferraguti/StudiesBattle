@@ -19,15 +19,6 @@ class Matiere {
 		page nullable: true
     }
 	
-	Matiere(String nom, Parcours parcours){
-		this.nom = nom
-		this.parcours = parcours
-		
-//		cours = new ArrayList<Cours>()
-//		professeurs = new ArrayList<Professeur>()
-		
-	}
-	
 	
 	String toString(){
 		return (nom + " (" + parcours + ")")
