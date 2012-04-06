@@ -1,6 +1,8 @@
+import org.example.Role
 import studiesbattle.cours.Cours
 import studiesbattle.cours.Matiere
 import studiesbattle.cours.Parcours
+import studiesbattle.personne.Etudiant
 
 class BootStrap {
 
@@ -26,6 +28,16 @@ class BootStrap {
 		if(!Cours.count()){
 		//	new Cours("XML", 2.0f, 1.0f, Matiere.findByNom("IAWS")).save(failOnError: true)
 		}
+		
+		if(!Role.count()){
+			new Role(authority: "Administrateur").save(failOnError: true)
+			new Role(authority: "Professeur").save(failOnError: true)
+			new Role(authority: "Etudiant").save(failOnError: true)
+		}
+		
+		if(!Etudiant.count()){
+		}
+		
     }
 	
 	
