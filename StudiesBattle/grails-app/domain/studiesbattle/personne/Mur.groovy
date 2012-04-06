@@ -22,4 +22,6 @@ class Mur {
 
     static constraints = {
     }
+	
+	
 }

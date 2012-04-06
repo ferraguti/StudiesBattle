@@ -7,13 +7,12 @@ import studiesbattle.personne.Professeur;
 
 class Matiere {
 	String nom
-	PageMatiere page
+	PageMatiere page// = new PageMatiere(matiere: this)
 	List cours
 	List professeurs
-	//List etudiantsInscrit
-	
+
 	static belongsTo = [parcours : Parcours]
-	static hasMany = [cours : Cours, professeurs : Professeur]//, etudiantsInscrit : Etudiant]
+	static hasMany = [cours : Cours, professeurs : Professeur]
 
     static constraints = {
 		nom blank: false, unique: true
@@ -24,9 +23,8 @@ class Matiere {
 		this.nom = nom
 		this.parcours = parcours
 		
-		page = new PageMatiere(matiere: this)
-		cours = new ArrayList<Cours>()
-		professeurs = new ArrayList<Professeur>()
+//		cours = new ArrayList<Cours>()
+//		professeurs = new ArrayList<Professeur>()
 		
 	}
 	
