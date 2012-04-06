@@ -39,9 +39,9 @@
 					
 						<td><g:link action="show" id="${matiereInstance.id}">${fieldValue(bean: matiereInstance, field: "nom")}</g:link></td>
 					
-						<td>${fieldValue(bean: matiereInstance, field: "parcours")}</td>
+						<td><g:link controller="parcours" action="show" id="${matiereInstance?.parcours?.id}">${matiereInstance?.parcours?.encodeAsHTML()}</g:link></td>
 						
-						<td>${fieldValue(bean: matiereInstance, field: "page")}</td>
+						<td><g:link controller="pageMatiere" action="show" id="${matiereInstance?.page?.id}">${matiereInstance?.page?.encodeAsHTML()}</g:link></td>
 					
 					
 					

@@ -7,7 +7,7 @@ import studiesbattle.personne.Professeur;
 
 class Matiere {
 	String nom
-	PageMatiere page// = new PageMatiere(matiere: this)
+	PageMatiere page
 	List cours
 	List professeurs
 
@@ -18,6 +18,13 @@ class Matiere {
 		nom blank: false, unique: true
 		page nullable: true
     }
+	
+	Matiere(String nom, Parcours parcours){
+		this.nom = nom
+		this.parcours = parcours
+		page = new PageMatiere(matiere: this)
+		
+	}
 	
 	
 	String toString(){
