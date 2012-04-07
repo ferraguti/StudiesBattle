@@ -33,6 +33,13 @@
 				</g:if>
 			
 			</ol>
+			
+			<br />
+		    <g:uploadForm action="upload">
+		        <input type="file" name="myFile" />
+		        <input type="submit" />
+		    </g:uploadForm>
+			
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${pageMatiereInstance?.id}" />

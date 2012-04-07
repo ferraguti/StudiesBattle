@@ -100,4 +100,22 @@ class PageMatiereController {
             redirect(action: "show", id: params.id)
         }
     }
+	
+	def upload() {
+		def f = request.getFile('myFile')
+		if (f.empty) {
+			flash.message = 'file cannot be empty'
+			render(view: 'uploadForm')
+			return
+		}
+		
+		println(pageMatiereInstance.getNom())
+		String filename = new String("./" + f.getOriginalFilename())
+		//String filename = new String("./documents/" + pageMatiereInstance.getMatiere().getNom() + "/"+ f.getOriginalFilename())
+		
+		f.transferTo(new File(filename)) 
+		//response.sendError(200, 'Done')
+		//redirect(action: "show", id: pageMatiereInstance.id)
+		redirect(uri: filename)
+	}
 }

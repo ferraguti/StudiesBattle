@@ -13,12 +13,16 @@ class Mur {
 	}
 	
 	String toString(){
-		String res = new String("Mur de " + proprietaire)
-		
-		for(p in posts){
-			res += p.toString()
-		}
+		return("Mur de " + proprietaire.toString())
 	}
+	
+//	String toString(){
+//		String res = new String("Mur de " + proprietaire)
+//		
+//		for(p in posts){
+//			res += p.toString()
+//		}
+//	}
 
     static constraints = {
     }

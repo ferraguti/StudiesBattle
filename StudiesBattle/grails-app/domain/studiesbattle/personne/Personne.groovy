@@ -5,7 +5,7 @@ import org.example.User
 
 class Personne extends User{
 	String nom, prenom, email
-	long numNational
+	int numNational
 	String sexe
 	Mur mur
 	
@@ -19,6 +19,20 @@ class Personne extends User{
 		email email: true
 		mur nullable: true
     }
+	
+	Personne(String username, String password, String nom, String prenom, String sexe, int num){
+		this.username = username
+		this.password = password
+		this.nom = nom
+		this.prenom = prenom
+		this.sexe = sexe
+		this.numNational = num
+		this.email = prenom + "." + nom + "@studiesbattle.com"
+		
+		Mur temp = new Mur(proprietaire: this)
+		//temp.poster("Nick la police !", this)
+		this.mur = temp
+	}
 	
 	String toString(){
 		return (nom.toUpperCase() + " " + prenom)

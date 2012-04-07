@@ -39,7 +39,7 @@ class BootStrap {
 		}
 		
 		if(!Professeur.count()){
-			//new Professeur()
+			new Professeur("Fredi", "1234", "Frederick", "Migeon", "M", 1).save(failOnError: true)
 		}
 		
     }

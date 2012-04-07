@@ -31,6 +31,17 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${murInstance?.posts}">
+				<li class="fieldcontain">
+					<span id="posts-label" class="property-label"><g:message code="mur.posts.label" default="posts" /></span>
+					
+						<g:each in="${murInstance.posts}" var="c">
+						<span class="property-value" aria-labelledby="posts-label"></span>
+						</g:each>
+					
+				</li>
+				</g:if>
 			
 			</ol>
 			<g:form>

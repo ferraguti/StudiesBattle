@@ -12,6 +12,12 @@ class Professeur extends Personne{
     static constraints = {
     }
 	
+	Professeur(String username, String password, String nom, String prenom, String sexe, int num) {
+		super(username, password, nom, prenom, sexe, num)
+		
+		//code pour tester, a supprimer
+	}
+	
 	void donnerCours(Cours c){
 		boolean inscritMatiere = false;
 		def profs = c.matiere.professeurs
@@ -26,4 +32,6 @@ class Professeur extends Personne{
 		//else erreur cours d'une matiere qu'il n'a pas
 
 	}
+
+
 }

@@ -21,6 +21,14 @@ class Etudiant extends Personne{
 		age nullable: true, min: 13
     }
 	
+	Etudiant(String username, String password, String nom, String prenom, String sexe, long num, Parcours parcours, int age){
+		super(username, password, nom, prenom, sexe, num)
+		
+		this.parcours = parcours
+		this.age = age
+		this.email = prenom + "." + nom + "@" + parcours.getNom + "-studiesbattle.com"
+	}
+	
 	/*void inscrireMatiere(Matiere m){
 		
 		if(!matieres.contains(m)){
