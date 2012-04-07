@@ -15,7 +15,7 @@ class Professeur extends Personne{
 	Professeur(String username, String password, String nom, String prenom, String sexe, int num) {
 		super(username, password, nom, prenom, sexe, num)
 		
-		//code pour tester, a supprimer
+		
 	}
 	
 	void donnerCours(Cours c){

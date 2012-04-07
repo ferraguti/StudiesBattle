@@ -23,11 +23,28 @@ class Matiere {
 		this.nom = nom
 		this.parcours = parcours
 		page = new PageMatiere(matiere: this)
+		this.parcours.ajouterMatiere(this)
 	}
 	
 	
 	String toString(){
 		return (nom + " (" + parcours + ")")
+	}
+	
+	String getNom(){
+		return nom
+	}
+	
+	void ajouterProfesseur(Professeur prof){
+		boolean existeDeja = false
+		
+		for(p in professeurs){
+			if(p.getNumNational() == prof.getNumNational())
+				existeDeja = true
+		}
+		
+		if(!existeDeja)
+			this.professeurs.add(prof)
 	}
 }
 

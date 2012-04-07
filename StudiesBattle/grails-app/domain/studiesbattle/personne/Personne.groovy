@@ -29,9 +29,8 @@ class Personne extends User{
 		this.numNational = num
 		this.email = prenom + "." + nom + "@studiesbattle.com"
 		
-		Mur temp = new Mur(proprietaire: this)
 		//temp.poster("Nick la police !", this)
-		this.mur = temp
+		this.mur = new Mur(this)
 	}
 	
 	String toString(){

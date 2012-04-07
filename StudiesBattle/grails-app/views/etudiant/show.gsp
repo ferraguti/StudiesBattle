@@ -96,23 +96,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${etudiantInstance?.accountExpired}">
-				<li class="fieldcontain">
-					<span id="accountExpired-label" class="property-label"><g:message code="etudiant.accountExpired.label" default="Account Expired" /></span>
-					
-						<span class="property-value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${etudiantInstance?.accountExpired}" /></span>
-					
-				</li>
-				</g:if>
 			
-				<g:if test="${etudiantInstance?.accountLocked}">
-				<li class="fieldcontain">
-					<span id="accountLocked-label" class="property-label"><g:message code="etudiant.accountLocked.label" default="Account Locked" /></span>
-					
-						<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${etudiantInstance?.accountLocked}" /></span>
-					
-				</li>
-				</g:if>
 			
 				<g:if test="${etudiantInstance?.badges}">
 				<li class="fieldcontain">
@@ -125,14 +109,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${etudiantInstance?.enabled}">
-				<li class="fieldcontain">
-					<span id="enabled-label" class="property-label"><g:message code="etudiant.enabled.label" default="Enabled" /></span>
-					
-						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${etudiantInstance?.enabled}" /></span>
-					
-				</li>
-				</g:if>
+
 			
 				<g:if test="${etudiantInstance?.mur}">
 				<li class="fieldcontain">
@@ -152,14 +129,7 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${etudiantInstance?.passwordExpired}">
-				<li class="fieldcontain">
-					<span id="passwordExpired-label" class="property-label"><g:message code="etudiant.passwordExpired.label" default="Password Expired" /></span>
-					
-						<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${etudiantInstance?.passwordExpired}" /></span>
-					
-				</li>
-				</g:if>
+	
 			
 				<g:if test="${etudiantInstance?.points}">
 				<li class="fieldcontain">

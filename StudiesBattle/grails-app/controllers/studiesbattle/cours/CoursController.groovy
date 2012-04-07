@@ -25,6 +25,8 @@ class CoursController {
             render(view: "create", model: [coursInstance: coursInstance])
             return
         }
+		
+		coursInstance.getMatiere().ajouterProfesseur(coursInstance.getProf())
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'cours.label', default: 'Cours'), coursInstance.id])
         redirect(action: "show", id: coursInstance.id)

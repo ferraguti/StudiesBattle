@@ -25,12 +25,7 @@ class BootStrap {
 			new Matiere("DCLL",  Parcours.findByNom("Informatique")).save(failOnError: true)
 		}
 		
-		if(!Cours.count()){
-//		//new Cours(nom: "name").save(failOnError: true)
-//		new Cours(nom: "name2", matiere: Matiere.findByNom("TER")).save(failOnError: true)
-//		new Cours(nom: "name3", matiere: Matiere.findByNom("TER"), heure: 0.26).save(failOnError: true)
-//		new Cours(nom: "name4", matiere: Matiere.findByNom("TER"), heure: 1, coefficient: 1).save(failOnError: true)
-		}
+
 		
 		if(!Role.count()){
 			new Role(authority: "Administrateur").save(failOnError: true)
@@ -39,8 +34,17 @@ class BootStrap {
 		}
 		
 		if(!Professeur.count()){
-			new Professeur("Fredi", "1234", "Frederick", "Migeon", "M", 1).save(failOnError: true)
+			new Professeur("Fredou", "1234", "Migeon", "Frederick", "M", 1).save(failOnError: true)
+			new Professeur("JBR", "1234", "Raclet", "JB", "M", 2).save(failOnError: true)
+			new Professeur("Lucky", "1234",  "Pons", "Luc", "M", 3).save(failOnError: true)
 		}
+		
+		if(!Cours.count()){
+			//		//new Cours(nom: "name").save(failOnError: true)
+			//		new Cours(nom: "name2", matiere: Matiere.findByNom("TER")).save(failOnError: true)
+					//new Cours(nom: "XML", matiere: Matiere.findByNom("IAWS"), heure: 0.26, coefficient: 1, prof: Professeur.findByUsername("Fredi")).save(failOnError: true)
+						//new Cours("name4", 1, 1, Matiere.findByNom("TER")).save(failOnError: true)
+					}
 		
     }
 	

@@ -34,10 +34,10 @@
 				
 				<g:if test="${parcoursInstance?.matieres}">
 				<li class="fieldcontain">
-					<span id="matieres-label" class="property-label"><g:message code="parcours.matieres.label" default="matieres" /></span>
+					<span id="matieres-label" class="property-label"><g:message code="parcours.matieres.label" default="Matieres" /></span>
 					
 						<g:each in="${parcoursInstance.matieres}" var="p">
-						<span class="property-value" aria-labelledby="matieres-label"><g:link controller="matiere" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>*
+						<span class="property-value" aria-labelledby="matieres-label"><g:link controller="matiere" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
