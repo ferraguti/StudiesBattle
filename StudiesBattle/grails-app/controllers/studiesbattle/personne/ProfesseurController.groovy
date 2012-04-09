@@ -1,5 +1,7 @@
 package studiesbattle.personne
 
+import org.example.UserRole
+import org.example.Role
 import org.springframework.dao.DataIntegrityViolationException
 
 class ProfesseurController {
@@ -25,7 +27,7 @@ class ProfesseurController {
             render(view: "create", model: [professeurInstance: professeurInstance])
             return
         }
-		
+		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save(failOnError:true)
 		Mur m = new Mur(proprietaire: professeurInstance)
 		professeurInstance.setMur(m)
 
