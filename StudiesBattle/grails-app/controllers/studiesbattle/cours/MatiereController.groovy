@@ -26,8 +26,8 @@ class MatiereController {
             return
         }
 		
-		PageMatiere page = new PageMatiere(matiereInstance)
-		matiereInstance.setPage(page)
+		if(matiereInstance.getPage()==null)
+		matiereInstance.setPage(new PageMatiere(matiereInstance))
 		
 		//matiereInstance.getParcours().ajouterMatiere(matiereInstance)
 

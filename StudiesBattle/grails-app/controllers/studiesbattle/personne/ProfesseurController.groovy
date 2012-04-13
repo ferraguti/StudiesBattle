@@ -28,8 +28,8 @@ class ProfesseurController {
             return
         }
 		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save(failOnError:true)
-		Mur m = new Mur(proprietaire: professeurInstance)
-		professeurInstance.setMur(m)
+		if(professeurInstance.getMur==null)
+		professeurInstance.setMur(new Mur(proprietaire: professeurInstance))
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'professeur.label', default: 'Professeur'), professeurInstance.id])
         redirect(action: "show", id: professeurInstance.id)
