@@ -35,11 +35,12 @@
 			</ol>
 			
 			<br />
-		    <g:uploadForm action="upload">
-		        <input type="file" name="myFile" />
-		        <input type="submit" />
-		    </g:uploadForm>
-			
+			<sec:ifAllGranted roles="Professeur">
+  		    	<g:uploadForm action="upload">
+		        	<input type="file" name="myFile" />
+		        	<input type="submit" />
+		    	</g:uploadForm>
+			</sec:ifAllGranted>			
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${pageMatiereInstance?.id}" />

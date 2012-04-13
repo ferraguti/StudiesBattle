@@ -1,6 +1,8 @@
 package studiesbattle.cours
 
 import org.springframework.dao.DataIntegrityViolationException
+import grails.plugins.springsecurity.Secured
+
 
 class PageMatiereController {
 
@@ -101,6 +103,7 @@ class PageMatiereController {
         }
     }
 	
+	@Secured(["Professeur", "Administrateur"])
 	def upload() {
 		def f = request.getFile('myFile')
 		if (f.empty) {
