@@ -37,6 +37,8 @@ class MurController {
             redirect(action: "list")
             return
         }
+		
+		System.out.println(murInstance.posts.size())
 
         [murInstance: murInstance]
     }
@@ -100,4 +102,18 @@ class MurController {
             redirect(action: "show", id: params.id)
         }
     }
+	
+	def poster(){
+		def murInstance = Mur.get(params.id)
+		
+		//ici recuperer username
+		String username = new String("RAT")
+		
+		murInstance.posts.add("RANDOM MESSAGE2")
+		murInstance.getPosts().add("RANDOM MESSAGE3")
+		murInstance.poster("RANDOM MESSAGE1", username)
+		
+		System.out.println(murInstance.posts.size())
+		redirect(action: "show", id: murInstance.id)
+	}
 }

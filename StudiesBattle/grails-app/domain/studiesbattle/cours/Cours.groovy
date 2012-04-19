@@ -25,12 +25,23 @@ class Cours {
 		prof nullable: true
     }
 	
-	Cours(String nom, float heures, float coefficient, Matiere m) {
+	Cours(String nom, float heures, float coefficient, Matiere m, Professeur p) {
 		this.nom = nom;
 		this.heures = heures;
 		this.coefficient = coefficient;
 		this.matiere = m;
+		this.prof = p
+		this.etudiantsPresents = new ArrayList()
 	}
+	
+	Cours(String nom, Matiere m, Professeur p) {
+		this.nom = nom;
+		this.matiere = m;
+		this.prof = p
+		this.etudiantsPresents = new ArrayList()
+	}
+	
+	
 	
 	void donnerPoints(){
 		for(e in etudiantsPresents)

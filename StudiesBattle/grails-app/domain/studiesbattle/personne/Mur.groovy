@@ -5,17 +5,25 @@ import java.util.ArrayList;
 
 
 class Mur {
-	List posts = new ArrayList()
+	List<String> posts = new ArrayList<String>()
 	
 	static belongsTo = [proprietaire : Personne]
 	
 	Mur(Personne proprio){
 		this.proprietaire = proprio
+		posts = new ArrayList<String>()
 		posts.add(new String("FUCK YOU"))
+		posts.add(new String("FUCK YOU TOO"))
+		
+		System.out.println("MUR DE " + this.proprietaire)
 	}
 	
 	void poster(String message, Personne auteur){
 		posts.add(new String (auteur.toString() + " a écrit : \n" + message + "\n\n"))
+	}
+	
+	void poster(String message, String auteurNom){
+		posts.add(new String (auteurNom + " a écrit : \n" + message + "\n\n"))
 	}
 	
 	String toString(){

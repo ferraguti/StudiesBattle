@@ -34,6 +34,14 @@
 	<g:textField name="prenom" required="" value="${etudiantInstance?.prenom}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'numNational', 'error')} required">
+	<label for="numNational">
+		<g:message code="etudiant.numNational.label" default="Numero Etudiant" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="number" name="numNational" required="" value="${fieldValue(bean: etudiantInstance, field: 'numNational')}"/>
+</div>
+
 
 <div class="fieldcontain ${hasErrors(bean: etudiantInstance, field: 'sexe', 'error')} required">
 	<label for="sexe">

@@ -88,6 +88,9 @@
 				</g:if>
 			
 			</ol>
+			
+			
+			
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${professeurInstance?.id}" />

@@ -54,4 +54,13 @@ class UserRole implements Serializable {
 		id composite: ['role', 'user']
 		version false
 	}
+	
+	static Role getAuthorityFromUserName(String name){
+		for(u in UserRole.getAll()){
+			if(u.getUser().getUsername().equals(name))
+				return u.getRole().getAuthority()
+		}
+		
+		return null
+	}
 }

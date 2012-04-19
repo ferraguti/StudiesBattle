@@ -2,9 +2,12 @@ package studiesbattle.cours
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import studiesbattle.personne.Professeur
+
 class CoursController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	def springSecurityService
 
     def index() {
         redirect(action: "list", params: params)
@@ -102,4 +105,34 @@ class CoursController {
             redirect(action: "show", id: params.id)
         }
     }
+	
+	def aller(){
+		def coursInstance = Cours.get(params.id)
+		
+		if(springSecurityService.isLoggedIn()){
+			def user = springSecurityService.currentUser
+			
+			//Professeur
+			Professeur p = coursInstance.getProf()
+			
+			if(p.getUsername().equals(Professeur.findByUsername(user.username).getUsername())){
+				coursInstance.donnerPoints()
+				flash.message = "Vous avez donne le cours avec succes, il y avait " + coursInstance.getEtudiantsPresents().size() + " eleves presents"
+				//+terminer le cours ?
+				redirect(action: "list")
+			}
+			else{
+				flash.message = "Vous n'etes pas " + p + ", le professeur attitre a ce cours"
+				redirect(action: "show", id: params.id)
+			}
+			
+			
+			//System.out.println(UserRole.findByUser(user).getRole().getAuthority())
+			//System.out.println(UserRole.getAuthorityFromUserName(user.username))
+		}
+		else {
+			flash.message = "Vous n'etes pas identifie"
+			redirect(controller: "login", action: "index")
+		}
+	}
 }

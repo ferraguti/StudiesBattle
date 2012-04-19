@@ -34,7 +34,7 @@ class Personne extends User{
 	}
 	
 	String toString(){
-		return (nom.toUpperCase() + " " + prenom)
+		return (prenom + " " + nom.toUpperCase())
 	}
 	
 	

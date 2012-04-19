@@ -7,12 +7,13 @@ import org.springframework.dao.DataIntegrityViolationException
 class ProfesseurController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	def springSecurityService
 
     def index() {
         redirect(action: "list", params: params)
     }
 
-    def list() {
+    def list() {	
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         [professeurInstanceList: Professeur.list(params), professeurInstanceTotal: Professeur.count()]
     }
@@ -28,8 +29,9 @@ class ProfesseurController {
             return
         }
 		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save(failOnError:true)
-		if(professeurInstance.getMur==null)
-		professeurInstance.setMur(new Mur(proprietaire: professeurInstance))
+		
+		if(professeurInstance.getMur == null)
+			professeurInstance.setMur(new Mur(professeurInstance))
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'professeur.label', default: 'Professeur'), professeurInstance.id])
         redirect(action: "show", id: professeurInstance.id)

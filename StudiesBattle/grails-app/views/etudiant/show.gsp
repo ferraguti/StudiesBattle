@@ -139,9 +139,15 @@
 					
 				</li>
 				</g:if>
+				
+		<g:message code="etudiant.mur.label" default="Mur" />
+		<g:select id="mur" name="mur.id" from="${studiesbattle.personne.Mur.list()}" optionKey="id" required="" value="${etudiantInstance?.mur?.id}" class="many-to-one"/>
 			
 			
 			</ol>
+			
+			
+			
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${etudiantInstance?.id}" />
