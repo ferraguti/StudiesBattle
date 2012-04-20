@@ -4,7 +4,7 @@ import java.util.List;
 
 import studiesbattle.badge.Badge
 import studiesbattle.cours.Cours;
-import studiesbattle.cours.Matiere;
+import studiesbattle.cours.Exam
 import studiesbattle.cours.Parcours
 
 
@@ -59,5 +59,16 @@ class Etudiant extends Personne{
 	void gagnerPoints(Cours c){
 		points += (c.getCoefficient() * c.getHeures());
 		//+badge
+	}
+	
+	float passerExam(Exam e){
+		int note = Math.random() * 20
+		
+		(note < 20 && points > 0){
+			note += 1/50
+			points -= 1
+		}
+		
+		return note
 	}
 }

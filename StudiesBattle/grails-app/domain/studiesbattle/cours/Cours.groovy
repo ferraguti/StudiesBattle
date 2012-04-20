@@ -21,6 +21,7 @@ class Cours {
 	//nbr max eleve
 
     static constraints = {
+		nom blank: false
 		heures min: 0.25f
 		coefficient min: 0.0f
 		prof nullable: true

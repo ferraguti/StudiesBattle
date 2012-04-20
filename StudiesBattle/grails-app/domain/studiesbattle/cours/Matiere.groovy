@@ -2,7 +2,6 @@ package studiesbattle.cours
 
 import java.util.List;
 
-import studiesbattle.personne.Etudiant;
 import studiesbattle.personne.Professeur;
 
 class Matiere {
@@ -12,7 +11,7 @@ class Matiere {
 	List professeurs
 
 	static belongsTo = [parcours : Parcours]
-	static hasMany = [cours : Cours, professeurs : Professeur]
+	static hasMany = [cours : Cours, professeurs : Professeur, exams : Exam]
 
     static constraints = {
 		nom blank: false, unique: true
@@ -23,7 +22,7 @@ class Matiere {
 		this.nom = nom
 		this.parcours = parcours
 		page = new PageMatiere(matiere: this)
-		//this.parcours.ajouterMatiere(this)
+		this.parcours.ajouterMatiere(this)
 	}
 	
 	
