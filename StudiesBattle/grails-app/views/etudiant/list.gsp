@@ -26,13 +26,15 @@
 					
 						<g:sortableColumn property="username" title="${message(code: 'etudiant.username.label', default: 'Username')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'etudiant.password.label', default: 'Password')}" />
-					
 						<g:sortableColumn property="nom" title="${message(code: 'etudiant.nom.label', default: 'Nom')}" />
 					
 						<g:sortableColumn property="prenom" title="${message(code: 'etudiant.prenom.label', default: 'Prenom')}" />
 					
 						<g:sortableColumn property="numNational" title="${message(code: 'etudiant.numNational.label', default: 'Numero Etudiant')}" />
+						
+						<g:sortableColumn property="points" title="${message(code: 'etudiant.points.label', default: 'Points')}" />
+						
+						<g:sortableColumn property="parcours" title="${message(code: 'etudiant.parcours.label', default: 'Parcours')}" />
 					
 					</tr>
 				</thead>
@@ -42,13 +44,15 @@
 					
 						<td><g:link action="show" id="${etudiantInstance.id}">${fieldValue(bean: etudiantInstance, field: "username")}</g:link></td>
 					
-						<td>${fieldValue(bean: etudiantInstance, field: "password")}</td>
-					
 						<td>${fieldValue(bean: etudiantInstance, field: "nom")}</td>
 					
 						<td>${fieldValue(bean: etudiantInstance, field: "prenom")}</td>
 					
 						<td>${fieldValue(bean: etudiantInstance, field: "numNational")}</td>
+						
+						<td>${fieldValue(bean: etudiantInstance, field: "points")}</td>
+						
+						<td><g:link action="show" id="${etudiantInstance.parcours.id}">${fieldValue(bean: etudiantInstance, field: "parcours")}</g:link></td>
 					
 					</tr>
 				</g:each>

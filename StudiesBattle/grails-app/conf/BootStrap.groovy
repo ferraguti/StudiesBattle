@@ -2,6 +2,7 @@ import org.example.Role
 import studiesbattle.cours.Cours
 import studiesbattle.cours.Matiere
 import studiesbattle.cours.Parcours
+import studiesbattle.personne.Etudiant
 import studiesbattle.personne.Professeur
 
 class BootStrap {
@@ -39,12 +40,14 @@ class BootStrap {
 			new Professeur("Lucky", "1234",  "Pons", "Luc", "M", 3).save(failOnError: true)
 		}
 		
+		if(!Etudiant.count()){
+			new Etudiant("Splinter", "1234",  "Rat", "Le", "M", 13, Parcours.findByNom("Informatique"), 13).save(failOnError: true)
+			new Etudiant("Bonasse", "1234",  "Bonasse", "La", "F", 20, Parcours.findByNom("Biologie"), 20).save(failOnError: true)
+		}
+		
 		if(!Cours.count()){
-			//		//new Cours(nom: "name").save(failOnError: true)
-			//		new Cours(nom: "name2", matiere: Matiere.findByNom("TER")).save(failOnError: true)
-					//new Cours(nom: "XML", matiere: Matiere.findByNom("IAWS"), heure: 0.26, coefficient: 1, prof: Professeur.findByUsername("Fredi")).save(failOnError: true)
-						//new Cours("name4", 1, 1, Matiere.findByNom("TER")).save(failOnError: true)
-					}
+			//new Cours("JSP", Matiere.findByNom("JEE"), Professeur.findByNom("Raclet")).save(failOnError: true)
+		}
 		
     }
 	

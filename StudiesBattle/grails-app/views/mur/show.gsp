@@ -37,7 +37,7 @@
 					<span id="posts-label" class="property-label"><g:message code="mur.posts.label" default="posts" /></span>
 					
 						<g:each in="${murInstance.posts}" var="c">
-						<span class="property-value" aria-labelledby="posts-label"></span>
+						<span class="property-value" aria-labelledby="posts-label">${c.encodeAsHTML()}</span>
 						</g:each>
 					
 				</li>
@@ -49,6 +49,7 @@
 					<g:hiddenField name="id" value="${murInstance?.id}" />
 					<g:link class="edit" action="edit" id="${murInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+					<g:link controller="mur" action="poster" id="${murInstance?.id}">Nique la police</g:link>
 				</fieldset>
 			</g:form>
 		</div>

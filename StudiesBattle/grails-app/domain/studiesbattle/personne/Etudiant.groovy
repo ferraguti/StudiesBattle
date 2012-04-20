@@ -21,12 +21,12 @@ class Etudiant extends Personne{
 		age nullable: true, min: 13
     }
 	
-	Etudiant(String username, String password, String nom, String prenom, String sexe, long num, Parcours parcours, int age){
+	Etudiant(String username, String password, String nom, String prenom, String sexe, int num, Parcours parcours, int age){
 		super(username, password, nom, prenom, sexe, num)
 		
 		this.parcours = parcours
 		this.age = age
-		this.email = prenom + "." + nom + "@" + parcours.getNom + "-studiesbattle.com"
+		this.email = prenom + "." + nom + "@" + parcours.nom + "-studiesbattle.com"
 	}
 	
 	/*void inscrireMatiere(Matiere m){
@@ -38,17 +38,17 @@ class Etudiant extends Personne{
 		//else erreur déja inscrit
 	}*/
 	
-	void allerCours(Cours c){
+	void allerCours(Cours c){ //on peut le faire dans le controller
 		
-		if(!c.etudiantsPresents.contains(this)){
-			boolean inscritMatiere = false;
+		if(!c.getEtudiantsPresents().contains(this)){
+//			boolean inscritMatiere = false;
+//			
+//			for(m in matieres){
+//				if(m.equals(c.matiere))
+//					inscritMatiere = true
+//			}
 			
-			for(m in matieres){
-				if(m.equals(c.matiere))
-					inscritMatiere = true
-			}
-			
-			if(inscritMatiere)
+			if(c.getMatiere().getParcours.getNom().equals(this.parcours))
 				c.etudiantsPresents.add(this)
 			//else erreur cours d'une matiere qu'il n'a pas
 			
@@ -56,8 +56,8 @@ class Etudiant extends Personne{
 		//else erreur déja present
 	}
 	
-	void gagnerPoints(float x){
-		points += x;
+	void gagnerPoints(Cours c){
+		points += (c.getCoefficient() * c.getHeures());
 		//+badge
 	}
 }
