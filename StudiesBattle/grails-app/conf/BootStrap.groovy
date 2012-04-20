@@ -42,6 +42,7 @@ class BootStrap {
 		
 		if(!Etudiant.count()){
 			new Etudiant("Splinter", "1234",  "Rat", "Le", "M", 13, Parcours.findByNom("Informatique"), 13).save(failOnError: true)
+			new Etudiant("Bonasse", "1234",  "Bonasse", "La", "F", 20, Parcours.findByNom("Biologie"), 20).save(failOnError: true)
 		}
 		
 		if(!Cours.count()){

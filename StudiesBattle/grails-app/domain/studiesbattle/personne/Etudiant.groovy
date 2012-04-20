@@ -56,8 +56,8 @@ class Etudiant extends Personne{
 		//else erreur déja present
 	}
 	
-	void gagnerPoints(float x){
-		points += x;
+	void gagnerPoints(Cours c){
+		points += (c.getCoefficient() * c.getHeures());
 		//+badge
 	}
 }

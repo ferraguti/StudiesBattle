@@ -26,7 +26,7 @@
 					
 						<g:sortableColumn property="nom" title="${message(code: 'matiere.nom.label', default: 'Nom')}" />
 						
-						<th><g:message code="matiere.parcours.label" default="Parcours" /></th>
+						<g:sortableColumn property="parcours" title="${message(code: 'matiere.parcours.label', default: 'Parcours')}" />
 					
 						<th><g:message code="matiere.page.label" default="Page" /></th>
 					

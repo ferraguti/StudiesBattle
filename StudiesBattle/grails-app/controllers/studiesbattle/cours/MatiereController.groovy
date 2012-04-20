@@ -21,16 +21,24 @@ class MatiereController {
 
     def save() {
         def matiereInstance = new Matiere(params)
+		System.out.println("TEST")
+		
+		ArrayList<Matiere> matieres = matiereInstance.getParcours().getMatieres()
+		matieres.add(matiereInstance)
+		matiereInstance.getParcours().setMatieres(matieres)
+		
         if (!matiereInstance.save(flush: true)) {
             render(view: "create", model: [matiereInstance: matiereInstance])
             return
         }
 		
 		if(matiereInstance.getPage()==null)
-		matiereInstance.setPage(new PageMatiere(matiereInstance))
+			matiereInstance.setPage(new PageMatiere(matiereInstance))
 		
 		//matiereInstance.getParcours().ajouterMatiere(matiereInstance)
-
+		//matiereInstance.getParcours().addToMatieres(matiereInstance)
+			
+			
 		flash.message = message(code: 'default.created.message', args: [message(code: 'matiere.label', default: 'Matiere'), matiereInstance.id])
         redirect(action: "show", id: matiereInstance.id)
     }

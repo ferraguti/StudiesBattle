@@ -11,6 +11,7 @@ class Cours {
 	String nom
 	float heures = 2.0f
 	float coefficient = 1.0f//dans matière ?
+	boolean termine = false
 	Professeur prof
 	List etudiantsPresents
 
@@ -24,6 +25,10 @@ class Cours {
 		coefficient min: 0.0f
 		prof nullable: true
     }
+	
+	static mapping = {
+		etudiantsPresent ignoreNotfound : true
+	}
 	
 	Cours(String nom, float heures, float coefficient, Matiere m, Professeur p) {
 		this.nom = nom;
@@ -42,10 +47,20 @@ class Cours {
 	}
 	
 	
-	
-	void donnerPoints(){
-		for(e in etudiantsPresents)
-			e.gagnerPoints(coefficient * heures)
+//	void donnerPoints(){
+//		for(e in etudiantsPresents)
+//			e.gagnerPoints(coefficient * heures)
+//			
+//		
+//	}
+//	
+	boolean estPresent(Etudiant etudiant){
+		for(e in  etudiantsPresents){
+			if(e.getUsername().equals(etudiant.getUsername()))
+				return true
+		}
+		
+		return false
 	}
 
 	String toString(){
