@@ -19,6 +19,7 @@ class ProfesseurController {
 
     def create() {
         [professeurInstance: new Professeur(params)]
+		
     }
 
     def save() {
