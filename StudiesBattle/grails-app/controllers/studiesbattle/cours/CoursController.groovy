@@ -10,6 +10,59 @@ class CoursController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	def springSecurityService
 
+	def aller(){
+		def coursInstance = Cours.get(params.id)
+		
+		if(coursInstance.getTermine()){
+			flash.message = "Ce cours est deja termine"
+			redirect(action: "list")
+		}
+		else if(springSecurityService.isLoggedIn()){
+			def user = springSecurityService.currentUser
+
+			if(Professeur.findByUsername(user.username) == null){ //Alors c'est un etudiant
+				Etudiant e = Etudiant.findByUsername(user.username)
+				
+				if(coursInstance.estPresent(e))
+					flash.message = "Vous etes deja present a ce cours"
+				else if(coursInstance.getMatiere().getParcours().getNom().equals(e.getParcours().getNom())){
+					//coursInstance.getEtudiantsPresents().add(coursInstance)
+					coursInstance.addToEtudiantsPresents(e)
+					flash.message = "Vous aller a ce cours..."
+				}
+				else
+					flash.message = "Vous etes inscrit dans la parcours " + e.getParcours() + " mais ceci est un cours du parcours " + coursInstance.getMatiere().getParcours() + ", vous ne pouvez donc pas y aller"
+					
+				redirect(action: "show", id: params.id)
+			}
+			else{ //Alors c'est un professeur
+				Professeur p = coursInstance.getProf()
+				
+				if(p.getUsername().equals(Professeur.findByUsername(user.username).getUsername())){
+					
+					ArrayList<Etudiant> etudiantsPresent = coursInstance.getEtudiantsPresents()
+					
+					for(e in coursInstance.getEtudiantsPresents())
+						e.gagnerPoints(coursInstance)
+						
+					coursInstance.setTermine(true)
+					
+					flash.message = "Vous avez donne le cours avec succes, il y avait " + coursInstance.getEtudiantsPresents().size() + " eleves presents"
+					redirect(action: "list")
+				}
+				else{
+					flash.message = "Vous n'etes pas " + p + ", le professeur attitre a ce cours"
+					redirect(action: "show", id: params.id)
+				}
+			}
+
+		}
+		else {
+			flash.message = "Vous n'etes pas identifie"
+			redirect(controller: "login", action: "index")
+		}
+	}
+	
     def index() {
         redirect(action: "list", params: params)
     }
@@ -106,57 +159,4 @@ class CoursController {
             redirect(action: "show", id: params.id)
         }
     }
-	
-	def aller(){
-		def coursInstance = Cours.get(params.id)
-		
-		if(coursInstance.getTermine()){
-			flash.message = "Ce cours est deja termine"
-			redirect(action: "list")
-		}
-		else if(springSecurityService.isLoggedIn()){
-			def user = springSecurityService.currentUser
-
-			if(Professeur.findByUsername(user.username) == null){ //Alors c'est un etudiant
-				Etudiant e = Etudiant.findByUsername(user.username)
-				
-				if(coursInstance.estPresent(e))
-					flash.message = "Vous etes deja present a ce cours"
-				else if(coursInstance.getMatiere().getParcours().getNom().equals(e.getParcours().getNom())){
-					//coursInstance.getEtudiantsPresents().add(coursInstance)
-					coursInstance.addToEtudiantsPresents(e)
-					flash.message = "Vous aller a ce cours..."
-				}
-				else
-					flash.message = "Vous etes inscrit dans la parcours " + e.getParcours() + " mais ceci est un cours du parcours " + coursInstance.getMatiere().getParcours() + ", vous ne pouvez donc pas y aller"
-					
-				redirect(action: "show", id: params.id)
-			}
-			else{ //Alors c'est un professeur
-				Professeur p = coursInstance.getProf()
-				
-				if(p.getUsername().equals(Professeur.findByUsername(user.username).getUsername())){
-					
-					ArrayList<Etudiant> etudiantsPresent = coursInstance.getEtudiantsPresents()
-					
-					for(e in coursInstance.getEtudiantsPresents())
-						e.gagnerPoints(coursInstance)
-						
-					coursInstance.setTermine(true)
-					
-					flash.message = "Vous avez donne le cours avec succes, il y avait " + coursInstance.getEtudiantsPresents().size() + " eleves presents"
-					redirect(action: "list")
-				}
-				else{
-					flash.message = "Vous n'etes pas " + p + ", le professeur attitre a ce cours"
-					redirect(action: "show", id: params.id)
-				}
-			}
-
-		}
-		else {
-			flash.message = "Vous n'etes pas identifie"
-			redirect(controller: "login", action: "index")
-		}
-	}
 }

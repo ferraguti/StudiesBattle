@@ -11,7 +11,7 @@ class Matiere {
 	List professeurs
 
 	static belongsTo = [parcours : Parcours]
-	static hasMany = [cours : Cours, professeurs : Professeur, exams : Exam]
+	static hasMany = [cours : Cours, professeurs : Professeur]
 
     static constraints = {
 		nom blank: false, unique: true

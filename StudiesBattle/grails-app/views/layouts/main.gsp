@@ -20,7 +20,7 @@
 	<body>
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'stylo-icon.png')}" alt="Grails"/></a>
 		<sec:ifLoggedIn>
-			<sec:username /> (<g:link controller="logout">sign out</g:link>)		
+			Log as : <sec:username /> (click<g:link controller="logout">here</g:link>to logout)		
 		</sec:ifLoggedIn></div>
 
 		<g:layoutBody/>

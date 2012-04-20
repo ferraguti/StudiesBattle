@@ -20,6 +20,7 @@ class ParcoursController {
     }
 
     def save() {
+
         def parcoursInstance = new Parcours(params)
         if (!parcoursInstance.save(flush: true)) {
             render(view: "create", model: [parcoursInstance: parcoursInstance])

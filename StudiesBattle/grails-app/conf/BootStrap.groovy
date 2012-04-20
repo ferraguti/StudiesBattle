@@ -26,8 +26,6 @@ class BootStrap {
 			new Matiere("DCLL",  Parcours.findByNom("Informatique")).save(failOnError: true)
 		}
 		
-
-		
 		if(!Role.count()){
 			new Role(authority: "Administrateur").save(failOnError: true)
 			new Role(authority: "Professeur").save(failOnError: true)
@@ -41,8 +39,11 @@ class BootStrap {
 		}
 		
 		if(!Etudiant.count()){
-			new Etudiant("Splinter", "1234",  "Rat", "Le", "M", 13, Parcours.findByNom("Informatique"), 13).save(failOnError: true)
-			new Etudiant("Bonasse", "1234",  "Bonasse", "La", "F", 20, Parcours.findByNom("Biologie"), 20).save(failOnError: true)
+			new Etudiant("Splinter", "1234",  "Rat", "Le", "M", 6, Parcours.findByNom("Informatique"), 13).save(failOnError: true)
+			new Etudiant("Bonasse", "1234",  "Bonasse", "La", "F", 7, Parcours.findByNom("Biologie"), 20).save(failOnError: true)
+			new Etudiant("BlueBlue", "camilleriforever",  "Lebeau", "Julien", "M", 4, Parcours.findByNom("Informatique"), 23).save(failOnError: true)
+			new Etudiant("Dizamok", "a",  "Ferraguti", "William", "M", 5, Parcours.findByNom("Informatique"), 21).save(failOnError: true)
+			Etudiant.findByUsername("Dizamok").setPoints(50)
 		}
 		
 		if(!Cours.count()){
