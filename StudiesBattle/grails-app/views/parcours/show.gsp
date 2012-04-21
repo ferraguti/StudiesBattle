@@ -23,7 +23,7 @@
 			</g:if>
 			<ol class="property-list parcours">
 			
-				<g:if test="${parcoursInstance?.nom}">
+			<g:if test="${parcoursInstance?.nom}">
 				<li class="fieldcontain">
 					<span id="nom-label" class="property-label"><g:message code="parcours.nom.label" default="Nom" /></span>
 					
@@ -31,17 +31,30 @@
 					
 				</li>
 				</g:if>
-				
+			
+			
 				<g:if test="${parcoursInstance?.matieres}">
 				<li class="fieldcontain">
-					<span id="matieres-label" class="property-label"><g:message code="parcours.matieres.label" default="matieres" /></span>
+					<span id="matieres-label" class="property-label"><g:message code="parcours.matieres.label" default="Matieres" /></span>
 					
-						<g:each in="${parcoursInstance.matieres}" var="p">
-						<span class="property-value" aria-labelledby="matieres-label"><g:link controller="matiere" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>*
+						<g:each in="${parcoursInstance.matieres}" var="m">
+						<span class="property-value" aria-labelledby="matieres-label"><g:link controller="matiere" action="show" id="${m.id}">${m?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${parcoursInstance?.etudiantsInscrit}">
+				<li class="fieldcontain">
+					<span id="etudiantsInscrit-label" class="property-label"><g:message code="parcours.etudiantsInscrit.label" default="Etudiants Inscrit" /></span>
+					
+						<g:each in="${parcoursInstance.etudiantsInscrit}" var="e">
+						<span class="property-value" aria-labelledby="etudiantsInscrit-label"><g:link controller="etudiant" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			
 			</ol>
 			<g:form>

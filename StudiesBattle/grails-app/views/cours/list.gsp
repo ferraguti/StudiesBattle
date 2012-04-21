@@ -44,13 +44,13 @@
 					
 						<td><g:link action="show" id="${coursInstance.id}">${fieldValue(bean: coursInstance, field: "nom")}</g:link></td>
 						
-						<td><g:link action="show" id="${coursInstance.matiere.id}">${fieldValue(bean: coursInstance, field: "matiere")}</g:link></td>
+						<td><g:link controller="matiere" action="show" id="${coursInstance.matiere.id}">${fieldValue(bean: coursInstance, field: "matiere")}</g:link></td>
 						
 						<td>${fieldValue(bean: coursInstance, field: "heures")}</td>
 						
 						<td>${fieldValue(bean: coursInstance, field: "coefficient")}</td>
 					
-						<td><g:link action="show" id="${coursInstance.id}">${fieldValue(bean: coursInstance, field: "prof")}</g:link></td>
+						<td><g:link controller="professeur" action="show" id="${coursInstance.prof.id}">${fieldValue(bean: coursInstance, field: "prof")}</g:link></td>
 						
 						<td>${fieldValue(bean: coursInstance, field: "termine")}</td>
 					

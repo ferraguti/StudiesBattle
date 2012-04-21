@@ -2,9 +2,44 @@ package studiesbattle.cours
 
 import org.springframework.dao.DataIntegrityViolationException
 
+import studiesbattle.personne.*
+
+
 class MatiereController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	def springSecurityService
+	
+	def exam(){
+		if(springSecurityService.isLoggedIn()){
+			def user = springSecurityService.currentUser
+			Professeur p = Professeur.findByUsername(user.username)
+			
+			if(p != null){
+				def matiereInstance = Matiere.get(params.id)
+				
+				if(matiereInstance.getProfesseurs().contains(p)){
+					def etudiants = Etudiant.findAllByParcours(matiereInstance.getParcours())
+					flash.message = "L'examen c'est deroule avec succes. \r\n"
+						
+					for(e in etudiants)
+						flash.message += e.toString() + " a obtenu une note de " + e.passerExam() + "/20. "
+						
+				}
+				else
+					flash.message = "Vous n'etes pas un professeur de cette matiere, vous ne pouvez pas organiser d'examen pour celle-ci"
+			}
+			else
+				flash.message = "Vous n'etes pas un professeur, vous ne pouvez pas organiser d'examen"
+	
+			redirect(action: "show", id: params.id)
+		}
+		else {
+			flash.message = "Vous n'etes pas identifie"
+			redirect(controller: "login", action: "index")
+		}
+			
+	}
 
     def index() {
         redirect(action: "list", params: params)
@@ -21,18 +56,17 @@ class MatiereController {
 
     def save() {
         def matiereInstance = new Matiere(params)
-		System.out.println("TEST")
 		
-		ArrayList<Matiere> matieres = matiereInstance.getParcours().getMatieres()
-		matieres.add(matiereInstance)
-		matiereInstance.getParcours().setMatieres(matieres)
+//		ArrayList<Matiere> matieres = matiereInstance.getParcours().getMatieres()
+//		matieres.add(matiereInstance)
+//		matiereInstance.getParcours().setMatieres(matieres)
 		
         if (!matiereInstance.save(flush: true)) {
             render(view: "create", model: [matiereInstance: matiereInstance])
             return
         }
 		
-		if(matiereInstance.getPage()==null)
+		if(matiereInstance.getPage() == null)
 			matiereInstance.setPage(new PageMatiere(matiereInstance))
 		
 		//matiereInstance.getParcours().ajouterMatiere(matiereInstance)

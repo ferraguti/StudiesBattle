@@ -4,7 +4,6 @@ import java.util.List;
 
 import studiesbattle.badge.Badge
 import studiesbattle.cours.Cours;
-import studiesbattle.cours.Matiere;
 import studiesbattle.cours.Parcours
 
 
@@ -27,37 +26,24 @@ class Etudiant extends Personne{
 		this.parcours = parcours
 		this.age = age
 		this.email = prenom + "." + nom + "@" + parcours.nom + "-studiesbattle.com"
-	}
-	
-	/*void inscrireMatiere(Matiere m){
 		
-		if(!matieres.contains(m)){
-			matieres.add(m)
-			m.etudiantsInscrit.add(this)
-		}
-		//else erreur déja inscrit
-	}*/
-	
-	void allerCours(Cours c){ //on peut le faire dans le controller
-		
-		if(!c.getEtudiantsPresents().contains(this)){
-//			boolean inscritMatiere = false;
-//			
-//			for(m in matieres){
-//				if(m.equals(c.matiere))
-//					inscritMatiere = true
-//			}
-			
-			if(c.getMatiere().getParcours.getNom().equals(this.parcours))
-				c.etudiantsPresents.add(this)
-			//else erreur cours d'une matiere qu'il n'a pas
-			
-		}
-		//else erreur déja present
+		this.parcours.addToEtudiantsInscrit(this)
 	}
+
 	
 	void gagnerPoints(Cours c){
 		points += (c.getCoefficient() * c.getHeures());
 		//+badge
+	}
+	
+	float passerExam(){
+		int note = Math.random() * 20
+		
+		while (note < 20 && points > 0){
+			note += 1/50
+			points -= 1
+		}
+		
+		return note
 	}
 }

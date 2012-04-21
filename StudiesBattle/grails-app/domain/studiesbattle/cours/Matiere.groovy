@@ -2,7 +2,6 @@ package studiesbattle.cours
 
 import java.util.List;
 
-import studiesbattle.personne.Etudiant;
 import studiesbattle.personne.Professeur;
 
 class Matiere {
@@ -22,7 +21,7 @@ class Matiere {
 	Matiere(String nom, Parcours parcours){
 		this.nom = nom
 		this.parcours = parcours
-		page = new PageMatiere(matiere: this)
+		this.page = new PageMatiere(matiere: this)
 		//this.parcours.ajouterMatiere(this)
 	}
 	

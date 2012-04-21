@@ -37,9 +37,7 @@ class ParcoursController {
             redirect(action: "list")
             return
         }
-		
-		System.out.println(Parcours.findByNom("Informatique").getMatieres().size())
-		
+
         [parcoursInstance: parcoursInstance]
     }
 

@@ -29,7 +29,6 @@ class Personne extends User{
 		this.numNational = num
 		this.email = prenom + "." + nom + "@studiesbattle.com"
 		
-		//temp.poster("Nick la police !", this)
 		this.mur = new Mur(this)
 	}
 	

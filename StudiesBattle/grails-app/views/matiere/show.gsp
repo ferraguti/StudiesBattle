@@ -78,6 +78,7 @@
 			<g:form>
 				<fieldset class="buttons">
 					<g:hiddenField name="id" value="${matiereInstance?.id}" />
+					<g:link controller="matiere" action="exam" id="${matiereInstance?.id}">Organiser un examen</g:link>
 					<g:link class="edit" action="edit" id="${matiereInstance?.id}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
 					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
 				</fieldset>

@@ -1,5 +1,7 @@
 package org.example
 
+import studiesbattle.personne.Etudiant
+
 class User {
 
 	transient springSecurityService
@@ -37,4 +39,5 @@ class User {
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
 	}
+	
 }

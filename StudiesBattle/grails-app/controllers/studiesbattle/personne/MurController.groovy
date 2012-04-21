@@ -5,6 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 class MurController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+	
 
     def index() {
         redirect(action: "list", params: params)
@@ -21,6 +22,7 @@ class MurController {
 
     def save() {
         def murInstance = new Mur(params)
+		
         if (!murInstance.save(flush: true)) {
             render(view: "create", model: [murInstance: murInstance])
             return
@@ -37,8 +39,6 @@ class MurController {
             redirect(action: "list")
             return
         }
-		
-		System.out.println(murInstance.posts.size())
 
         [murInstance: murInstance]
     }
@@ -102,18 +102,4 @@ class MurController {
             redirect(action: "show", id: params.id)
         }
     }
-	
-	def poster(){
-		def murInstance = Mur.get(params.id)
-		
-		//ici recuperer username
-		String username = new String("RAT")
-		
-		murInstance.posts.add("RANDOM MESSAGE2")
-		murInstance.getPosts().add("RANDOM MESSAGE3")
-		murInstance.poster("RANDOM MESSAGE1", username)
-		
-		System.out.println(murInstance.posts.size())
-		redirect(action: "show", id: murInstance.id)
-	}
 }

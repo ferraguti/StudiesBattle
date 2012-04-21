@@ -21,14 +21,15 @@ class Cours {
 	//nbr max eleve
 
     static constraints = {
+		nom blank: false
 		heures min: 0.25f
 		coefficient min: 0.0f
 		prof nullable: true
     }
 	
-	static mapping = {
-		etudiantsPresent ignoreNotfound : true
-	}
+//	static mapping = {
+//		etudiantsPresent ignoreNotfound : true
+//	}
 	
 	Cours(String nom, float heures, float coefficient, Matiere m, Professeur p) {
 		this.nom = nom;
