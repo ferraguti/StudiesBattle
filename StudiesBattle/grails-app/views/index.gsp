@@ -83,31 +83,35 @@
 	<body>
 		<a href="#page-body" class="skip"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 		<div id="status" role="complementary">
-			<h1>Application Status</h1>
-			<ul>
-				<li>App version: <g:meta name="app.version"/></li>
-				<li>Grails version: <g:meta name="app.grails.version"/></li>
-				<li>Groovy version: ${org.codehaus.groovy.runtime.InvokerHelper.getVersion()}</li>
-				<li>JVM version: ${System.getProperty('java.version')}</li>
-				<li>Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</li>
-				<li>Controllers: ${grailsApplication.controllerClasses.size()}</li>
-				<li>Domains: ${grailsApplication.domainClasses.size()}</li>
-				<li>Services: ${grailsApplication.serviceClasses.size()}</li>
-				<li>Tag Libraries: ${grailsApplication.tagLibClasses.size()}</li>
-			</ul>
-			<h1>Installed Plugins</h1>
-			<ul>
-				<g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-					<li>${plugin.name} - ${plugin.version}</li>
-				</g:each>
-			</ul>
+		
+		<sec:ifNotLoggedIn>
+		<h1>Inscription</h1>
+		<p>Venez découvrir ce réseau social en vous inscrivant ou en vous loggant si vous possédez déjà un compte</p>
+		
+		<br><h1>Etudiant</h1><br>
+		<g:link controller="Etudiant" action="create">Inscription</g:link><br><br>
+		<g:link controller="Login">Se Connecter</g:link>
+		<br>
+		<br>
+		<br><h1>Professeur</h1><br>
+		<g:link controller="Professeur" action="create">Inscription</g:link><br><br>
+		<g:link controller="Login">Se Connecter</g:link>
+		
+		</sec:ifNotLoggedIn>
+		
+		<sec:ifLoggedIn>
+			Logger en temps que : <sec:username /> 
+			<br>
+			(cliquer <g:link controller="logout">ici</g:link> pour vous deconnecter)	
+		</sec:ifLoggedIn>
+			
 		</div>
 		<div id="page-body" role="main">
 			<h1>Welcome !</h1>
-			<p>Bienvenu sur Studies Battle, le reseau social de l'université Paul Sabatier. Vous trouverez ici les differents parcours proposés par l'université, ainsi que les cours et matieres qu'elle dispense.
-			Studies Battle vous permet, entre autre, de donner des cours si vous etes professeur, de gagner des points en allant a ceux-ci si vous etes etudiant.
-			Ce reseau social offre aussi la possibilité d'interagir avec toutes les personnes qui y sont inscrit, au travers de leur "mur".
-</p>
+			<p>Bienvenu sur Studies Battle, le reseau social de l'université Paul Sabatier. Vous trouverez ici les differents parcours proposés par l'université, ainsi que les cours et matières qu'elle dispense.
+			Studies Battle vous permet, entre autre, de donner des cours si vous êtes professeur et de gagner des points en allant a ceux-ci si vous êtes étudiant.
+			Ce réseau social offre aussi la possibilité d'intéragir avec toutes les personnes qui y sont inscrit, au travers de leur "mur".
+			</p>
 
 			<br><br>Espace Authentification :
 			<br><g:link controller="login">- Login</g:link>

@@ -17,7 +17,7 @@ class BootStrap {
 		
 		if(!Matiere.count()){
 			//new Matiere("JEE", Parcours.findByNom("Informatique")).save(failOnError: true)
-			new Matiere(parcours : Parcours.findByNom("Informatique"), nom: "JEE").save(failOnError: true)
+			//new Matiere(parcours : Parcours.findByNom("Informatique"), nom: "JEE").save(failOnError: true)
 //			new Matiere("IAWS",  Parcours.findByNom("Informatique")).save(failOnError: true)
 //			new Matiere("AL",  Parcours.findByNom("Informatique")).save(failOnError: true)
 //			new Matiere("MA",  Parcours.findByNom("Informatique")).save(failOnError: true)
