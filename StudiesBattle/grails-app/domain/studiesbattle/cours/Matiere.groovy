@@ -21,7 +21,7 @@ class Matiere {
 	Matiere(String nom, Parcours parcours){
 		this.nom = nom
 		this.parcours = parcours
-		page = new PageMatiere(matiere: this)
+		this.page = new PageMatiere(matiere: this)
 		//this.parcours.ajouterMatiere(this)
 	}
 	

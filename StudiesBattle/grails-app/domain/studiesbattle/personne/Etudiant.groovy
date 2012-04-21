@@ -26,6 +26,8 @@ class Etudiant extends Personne{
 		this.parcours = parcours
 		this.age = age
 		this.email = prenom + "." + nom + "@" + parcours.nom + "-studiesbattle.com"
+		
+		this.parcours.addToEtudiantsInscrit(this)
 	}
 
 	

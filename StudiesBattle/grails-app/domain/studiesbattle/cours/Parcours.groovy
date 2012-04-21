@@ -7,8 +7,8 @@ import studiesbattle.personne.Professeur;
 
 class Parcours {
 	String nom
-	List matieres
-	List etudiantsInscrit
+	List matieres = new ArrayList()
+	List etudiantsInscrit = new ArrayList()
 	
 	static hasMany = [matieres : Matiere, etudiantsInscrit : Etudiant]
 	

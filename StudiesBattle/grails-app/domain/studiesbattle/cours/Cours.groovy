@@ -27,9 +27,9 @@ class Cours {
 		prof nullable: true
     }
 	
-	static mapping = {
-		etudiantsPresent ignoreNotfound : true
-	}
+//	static mapping = {
+//		etudiantsPresent ignoreNotfound : true
+//	}
 	
 	Cours(String nom, float heures, float coefficient, Matiere m, Professeur p) {
 		this.nom = nom;

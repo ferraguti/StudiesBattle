@@ -20,7 +20,6 @@ class ParcoursController {
     }
 
     def save() {
-
         def parcoursInstance = new Parcours(params)
         if (!parcoursInstance.save(flush: true)) {
             render(view: "create", model: [parcoursInstance: parcoursInstance])
@@ -38,9 +37,7 @@ class ParcoursController {
             redirect(action: "list")
             return
         }
-		
-		System.out.println(Parcours.findByNom("Informatique").getMatieres().size())
-		
+
         [parcoursInstance: parcoursInstance]
     }
 

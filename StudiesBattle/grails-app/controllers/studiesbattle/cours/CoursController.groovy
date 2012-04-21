@@ -12,6 +12,7 @@ class CoursController {
 
 	def aller(){
 		def coursInstance = Cours.get(params.id)
+		System.out.println(coursInstance.matiere)
 		
 		if(coursInstance.getTermine()){
 			flash.message = "Ce cours est deja termine"

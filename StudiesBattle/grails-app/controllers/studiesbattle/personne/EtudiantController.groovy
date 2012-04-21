@@ -30,7 +30,7 @@ class EtudiantController {
 
 		new UserRole(user: etudiantInstance, role: Role.findByAuthority("Etudiant")).save(failOnError:true)
 		
-		if(etudiantInstance.getMur == null)
+		if(etudiantInstance.getMur() == null)
 			etudiantInstance.setMur(new Mur(etudiantInstance))
 		
 		flash.message = message(code: 'default.created.message', args: [message(code: 'etudiant.label', default: 'Etudiant'), etudiantInstance.id])

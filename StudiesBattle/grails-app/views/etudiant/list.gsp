@@ -52,7 +52,7 @@
 						
 						<td>${fieldValue(bean: etudiantInstance, field: "points")}</td>
 						
-						<td><g:link action="show" id="${etudiantInstance.parcours.id}">${fieldValue(bean: etudiantInstance, field: "parcours")}</g:link></td>
+						<td><g:link controller="parcours" action="show" id="${etudiantInstance.parcours.id}">${fieldValue(bean: etudiantInstance, field: "parcours")}</g:link></td>
 					
 					</tr>
 				</g:each>
