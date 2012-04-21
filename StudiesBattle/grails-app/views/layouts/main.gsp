@@ -21,7 +21,8 @@
 		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'stylo-icon.png')}" alt="Grails"/></a>
 		<sec:ifLoggedIn>
 			Log as : <sec:username /> (click<g:link controller="logout">here</g:link>to logout)		
-		</sec:ifLoggedIn></div>
+		</sec:ifLoggedIn>
+		</div>
 
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo"></div>

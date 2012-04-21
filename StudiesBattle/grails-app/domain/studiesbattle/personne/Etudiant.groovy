@@ -27,33 +27,7 @@ class Etudiant extends Personne{
 		this.age = age
 		this.email = prenom + "." + nom + "@" + parcours.nom + "-studiesbattle.com"
 	}
-	
-	/*void inscrireMatiere(Matiere m){
-		
-		if(!matieres.contains(m)){
-			matieres.add(m)
-			m.etudiantsInscrit.add(this)
-		}
-		//else erreur déja inscrit
-	}*/
-	
-//	void allerCours(Cours c){ //on peut le faire dans le controller
-//		
-//		if(!c.getEtudiantsPresents().contains(this)){
-////			boolean inscritMatiere = false;
-////			
-////			for(m in matieres){
-////				if(m.equals(c.matiere))
-////					inscritMatiere = true
-////			}
-//			
-//			if(c.getMatiere().getParcours.getNom().equals(this.parcours))
-//				c.etudiantsPresents.add(this)
-//			//else erreur cours d'une matiere qu'il n'a pas
-//			
-//		}
-//		//else erreur déja present
-//	}
+
 	
 	void gagnerPoints(Cours c){
 		points += (c.getCoefficient() * c.getHeures());

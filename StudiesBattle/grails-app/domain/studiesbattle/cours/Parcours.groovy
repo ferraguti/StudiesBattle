@@ -7,10 +7,10 @@ import studiesbattle.personne.Professeur;
 
 class Parcours {
 	String nom
-	List matieres = new ArrayList()
-	List etudiantsInscrit = new ArrayList()
+	List matieres
+	List etudiantsInscrit
 	
-	static hasManny = [matieres : Matiere, etudiantsInscrit : Etudiant]
+	static hasMany = [matieres : Matiere, etudiantsInscrit : Etudiant]
 	
 	static mapping = {
 		matieres cascade:'all'
@@ -27,17 +27,17 @@ class Parcours {
 		return nom
 	}
 	
-	void ajouterMatiere(Matiere mat){
-		boolean existeDeja = false
-		
-		for(m in matieres){
-			if(m.toString().equals(mat.toString()))
-				existeDeja = true
-		}
-		
-		if(!existeDeja)
-			this.matieres.add(mat)
-	}
+//	void ajouterMatiere(Matiere mat){
+//		boolean existeDeja = false
+//		
+//		for(m in matieres){
+//			if(m.toString().equals(mat.toString()))
+//				existeDeja = true
+//		}
+//		
+//		if(!existeDeja)
+//			this.matieres.add(mat)
+//	}
 	
 	
 }
