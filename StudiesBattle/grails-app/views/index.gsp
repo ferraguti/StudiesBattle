@@ -103,20 +103,24 @@
 			</ul>
 		</div>
 		<div id="page-body" role="main">
-			<h1>Welcome to Grails</h1>
-			<p>Congratulations, you have successfully started your first Grails application! At the moment
-			   this is the default page, feel free to modify it to either redirect to a controller or display whatever
-			   content you may choose. Below is a list of controllers that are currently deployed in this application,
-			   click on each to execute its default action:</p>
+			<h1>Welcome !</h1>
+			<p>Bienvenu sur Studies Battle, le reseau social de l'université Paul Sabatier. Vous trouverez ici les differents parcours proposés par l'université, ainsi que les cours et matieres qu'elle dispense.
+			Studies Battle vous permet, entre autre, de donner des cours si vous etes professeur, de gagner des points en allant a ceux-ci si vous etes etudiant.
+			Ce reseau social offre aussi la possibilité d'interagir avec toutes les personnes qui y sont inscrit, au travers de leur "mur".
+</p>
 
-			<div id="controller-list" role="navigation">
-				<h2>Available Controllers:</h2>
-				<ul>
-					<g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
-						<li class="controller"><g:link controller="${c.logicalPropertyName}">${c.name}</g:link></li>
-					</g:each>
-				</ul>
-			</div>
+			<br><br>Espace Authentification :
+			<br><g:link controller="login">- Login</g:link>
+			<br><g:link controller="logout">- Logout</g:link>
+			
+			<br><br>Espace Personne :
+			<br><g:link controller="etudiant">- Etudiant</g:link>
+			<br><g:link controller="professeur">- Professeur</g:link>
+			
+			<br><br>Espace Enseignement :
+			<br><g:link controller="parcours">- Parcours</g:link>
+			<br><g:link controller="matiere">- Matiere</g:link>
+			<br><g:link controller="cours">- Cours</g:link>
 		</div>
 	</body>
 </html>
