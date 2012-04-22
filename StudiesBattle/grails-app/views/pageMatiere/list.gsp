@@ -1,46 +1,34 @@
-
-<%@ page import="studiesbattle.cours.PageMatiere" %>
-<!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'pageMatiere.label', default: 'PageMatiere')}" />
-		<title><g:message code="default.list.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#list-pageMatiere" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="list-pageMatiere" class="content scaffold-list" role="main">
-			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<table>
-				<thead>
-					<tr>
-					
-						<th><g:message code="pageMatiere.matiere.label" default="Matiere" /></th>
-					
-					</tr>
-				</thead>
-				<tbody>
-				<g:each in="${pageMatiereInstanceList}" status="i" var="pageMatiereInstance">
-					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
-					
-						<td><g:link action="show" id="${pageMatiereInstance.id}">${fieldValue(bean: pageMatiereInstance, field: "matiere")}</g:link></td>
-					
-					</tr>
-				</g:each>
-				</tbody>
-			</table>
-			<div class="pagination">
-				<g:paginate total="${pageMatiereInstanceTotal}" />
-			</div>
-		</div>
-	</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="layout" content="main" />
+        <title>FileResource List</title>
+    </head>
+    <body>
+        <div class="nav">
+   			  <span class="menuButton"><a class="home" href="/">Home</a></span>
+     </div>
+        <div class="body">
+
+			<h1>Upload de Fichier:</h1><br>
+
+			 <g:form method="post"  enctype="multipart/form-data">
+	                <div class="dialog">
+	                    <table>
+	                        <tbody>
+	                            <tr class="prop">
+	                                <td valign="top" class="name">
+	                                    <label for="fileUpload">Upload:</label>
+	                                </td>
+	                                <td valign="top" class="value ${hasErrors(bean:fileResourceInstance,field:'upload','errors')}">
+	                                    <input type="file" id="fileUpload" name="fileUpload" />
+	                                </td>
+	                            </tr> 
+	                        </tbody>
+	                    </table>
+	                </div>
+	
+	            </g:form>
+        </div>
+    </body>
 </html>

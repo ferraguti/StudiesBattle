@@ -1,5 +1,8 @@
 package studiesbattle
 
+//Inutilisé
+//Controller qui gère l'upload et le download de fichier
+
 class FileResourceController {
     
     def index = { redirect(action:list,params:params) }

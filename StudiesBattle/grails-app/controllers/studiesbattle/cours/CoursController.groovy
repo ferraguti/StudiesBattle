@@ -10,9 +10,9 @@ class CoursController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	def springSecurityService
 
+	//Aller au cours si élève et donner le cour si professeur
 	def aller(){
 		def coursInstance = Cours.get(params.id)
-		System.out.println(coursInstance.matiere)
 		
 		if(coursInstance.getTermine()){
 			flash.message = "Ce cours est deja termine"
@@ -27,7 +27,6 @@ class CoursController {
 				if(coursInstance.estPresent(e))
 					flash.message = "Vous etes deja present a ce cours"
 				else if(coursInstance.getMatiere().getParcours().getNom().equals(e.getParcours().getNom())){
-					//coursInstance.getEtudiantsPresents().add(coursInstance)
 					coursInstance.addToEtudiantsPresents(e)
 					flash.message = "Vous aller a ce cours..."
 				}
@@ -84,6 +83,7 @@ class CoursController {
             return
         }
 		
+		//Quand un prof donne un cours d'une matière il devient associé à cette matière (si c'est pas déjà le cas)
 		coursInstance.getMatiere().ajouterProfesseur(coursInstance.getProf())
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'cours.label', default: 'Cours'), coursInstance.id])

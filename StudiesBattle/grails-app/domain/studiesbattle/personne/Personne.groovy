@@ -8,8 +8,6 @@ class Personne extends User{
 	int numNational
 	String sexe
 	Mur mur
-	
-	//image
 
     static constraints = {
 		nom blank: false
@@ -37,8 +35,10 @@ class Personne extends User{
 	}
 	
 	
-	void poster(String message, Personne cible){
-		cible.mur.poster(message, this)
-		
-	}
+//	void poster(String message, Personne cible){
+//		cible.mur.poster(message, this)
+//		
+//	}
+	
+	//idées d'extension : avatar
 }

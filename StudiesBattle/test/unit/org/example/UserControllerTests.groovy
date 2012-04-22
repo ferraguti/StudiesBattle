@@ -3,6 +3,9 @@ package org.example
 
 
 import org.junit.*
+
+import user.UserController;
+import userrole.User;
 import grails.test.mixin.*
 
 @TestFor(UserController)

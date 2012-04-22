@@ -1,5 +1,6 @@
-package org.example
+package user
 
+import org.example.User;
 import org.springframework.dao.DataIntegrityViolationException
 
 class UserController {

@@ -10,6 +10,7 @@ class MatiereController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 	def springSecurityService
 	
+	//Organise une séance d'examen pour la matière
 	def exam(){
 		if(springSecurityService.isLoggedIn()){
 			def user = springSecurityService.currentUser
@@ -57,21 +58,14 @@ class MatiereController {
     def save() {
         def matiereInstance = new Matiere(params)
 		
-//		ArrayList<Matiere> matieres = matiereInstance.getParcours().getMatieres()
-//		matieres.add(matiereInstance)
-//		matiereInstance.getParcours().setMatieres(matieres)
-		
+		//On ajoute automatiquement la page
+		if(matiereInstance.getPage() == null)
+			matiereInstance.setPage(new PageMatiere(matiereInstance))
+
         if (!matiereInstance.save(flush: true)) {
             render(view: "create", model: [matiereInstance: matiereInstance])
             return
         }
-		
-		if(matiereInstance.getPage() == null)
-			matiereInstance.setPage(new PageMatiere(matiereInstance))
-		
-		//matiereInstance.getParcours().ajouterMatiere(matiereInstance)
-		//matiereInstance.getParcours().addToMatieres(matiereInstance)
-			
 			
 		flash.message = message(code: 'default.created.message', args: [message(code: 'matiere.label', default: 'Matiere'), matiereInstance.id])
         redirect(action: "show", id: matiereInstance.id)

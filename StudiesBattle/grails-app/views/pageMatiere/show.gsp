@@ -33,14 +33,14 @@
 				</g:if>
 			
 			</ol>
-			
-			<br />
-			<sec:ifAllGranted roles="Professeur">
-  		    	<g:uploadForm action="upload">
-		        	<input type="file" name="myFile" />
-		        	<input type="submit" />
-		    	</g:uploadForm>
-			</sec:ifAllGranted>			
+			<g:form>
+				<fieldset class="buttons">
+					<g:form controller="pageMatiere" action="upload">
+		        		<input type="file" name="myFile" />
+		        		<input type="submit" />
+		    		</g:form>
+				</fieldset>
+			</g:form>
 		</div>
 	</body>
 </html>

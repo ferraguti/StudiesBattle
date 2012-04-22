@@ -1,5 +1,6 @@
 package studiesbattle.cours
 
+//Aucune fonctionnalités pour l'instant
 
 class PageMatiere {
 	//Documents

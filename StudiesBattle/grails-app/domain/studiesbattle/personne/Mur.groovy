@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 class Mur {
-	List messages
+	List messages //une list de string ne fonctionnait pas
 	
 	static belongsTo = [proprietaire : Personne]
 	static hasMany = [messages : Message]

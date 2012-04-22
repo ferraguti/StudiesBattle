@@ -37,6 +37,7 @@ class Matiere {
 	void ajouterProfesseur(Professeur prof){
 		boolean existeDeja = false
 		
+		//On vérifie si le prof n'est pas déjà associé à cla matière
 		for(p in professeurs){
 			if(p.getNumNational() == prof.getNumNational())
 				existeDeja = true

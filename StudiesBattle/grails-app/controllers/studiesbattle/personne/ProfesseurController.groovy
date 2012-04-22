@@ -29,7 +29,11 @@ class ProfesseurController {
             render(view: "create", model: [professeurInstance: professeurInstance])
             return
         }
+		
+		//On définit son role de professeur
 		new UserRole(user: professeurInstance, role: Role.findByAuthority("Professeur")).save(failOnError:true)
+		
+		//On ajoute automatiquement son mur
 		if(professeurInstance.getMur() == null)
 			professeurInstance.setMur(new Mur(proprietaire: professeurInstance))
 

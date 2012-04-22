@@ -16,29 +16,15 @@ class MessageController {
         [messageInstanceList: Message.list(params), messageInstanceTotal: Message.count()]
     }
 
-    def create() {
-		def messageInstances = new Message(params)
-		
-//		//Definit l'auteur automatiquement
-//		if(springSecurityService.isLoggedIn()){
-//			Personne p = Personne.findByUsername(springSecurityService.currentUser.username)
-//			System.out.println(p)
-//			messageInstances.setAuteur(p)
-//		}
-//		else {
-//			flash.message = "Vous n'etes pas identifie"
-//			redirect(controller: "login", action: "index")
-//		}
-		
+    def create() {	
         [messageInstance: new Message(params)]
     }
 
     def save() {
         def messageInstance = new Message(params)
 		
-		Personne p = Personne.findByUsername(springSecurityService.currentUser.username)
-		System.out.println(p)
-		messageInstance.setAuteur(p)
+		//Definit l'auteur automatiquement
+		messageInstance.setAuteur(Personne.findByUsername(springSecurityService.currentUser.username))
 		
         if (!messageInstance.save(flush: true)) {
             render(view: "create", model: [messageInstance: messageInstance])

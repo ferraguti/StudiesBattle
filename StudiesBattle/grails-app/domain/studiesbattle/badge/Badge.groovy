@@ -1,5 +1,7 @@
 package studiesbattle.badge
 
+//Inutilisé
+
 class Badge {
 	String nom
 

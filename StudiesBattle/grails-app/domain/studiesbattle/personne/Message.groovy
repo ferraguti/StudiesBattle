@@ -2,7 +2,7 @@ package studiesbattle.personne
 
 class Message {
 	String contenu
-	Personne auteur
+	Personne auteur //calculé automatiquement en fonction de l'utilisateur loggé
 	Mur mur
 	
 	static belongTo = [mur : Mur]
@@ -11,12 +11,6 @@ class Message {
 		contenu blank: true
 		auteur nullable: true
     }
-	
-//	Message(Mur m, Personne p){
-//		this.mur = m
-//		this.auteur = p
-//		contenu 
-//	}
 	
 	Message(Mur mur, Personne auteur, String contenu) {
 		this.contenu = contenu;

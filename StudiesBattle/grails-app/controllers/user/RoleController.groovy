@@ -1,5 +1,6 @@
-package org.example
+package user
 
+import org.example.Role;
 import org.springframework.dao.DataIntegrityViolationException
 
 class RoleController {

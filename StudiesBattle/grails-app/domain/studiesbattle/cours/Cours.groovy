@@ -6,11 +6,10 @@ import studiesbattle.personne.Etudiant;
 import studiesbattle.personne.Professeur;
 
 class Cours {
-	//tp, td, cours
 	
 	String nom
 	float heures = 2.0f
-	float coefficient = 1.0f//dans matière ?
+	float coefficient = 1.0f
 	boolean termine = false
 	Professeur prof
 	List etudiantsPresents
@@ -18,7 +17,6 @@ class Cours {
 	static belongsTo = [matiere : Matiere]
 	static hasMany = [etudiantsPresents : Etudiant]
 	
-	//nbr max eleve
 
     static constraints = {
 		nom blank: false
@@ -26,10 +24,6 @@ class Cours {
 		coefficient min: 0.0f
 		prof nullable: true
     }
-	
-//	static mapping = {
-//		etudiantsPresent ignoreNotfound : true
-//	}
 	
 	Cours(String nom, float heures, float coefficient, Matiere m, Professeur p) {
 		this.nom = nom;
@@ -48,13 +42,6 @@ class Cours {
 	}
 	
 	
-//	void donnerPoints(){
-//		for(e in etudiantsPresents)
-//			e.gagnerPoints(coefficient * heures)
-//			
-//		
-//	}
-//	
 	boolean estPresent(Etudiant etudiant){
 		for(e in  etudiantsPresents){
 			if(e.getUsername().equals(etudiant.getUsername()))
@@ -67,4 +54,6 @@ class Cours {
 	String toString(){
 		return (nom + " (" + matiere.nom + ")")
 	}
+	
+	//idées d'extension : type (cours, td, tp), nbr élèves max
 }

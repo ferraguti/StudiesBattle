@@ -27,9 +27,11 @@ class EtudiantController {
             render(view: "create", model: [etudiantInstance: etudiantInstance])
             return
         }
-
+		
+		//On définit son role d'étudiant
 		new UserRole(user: etudiantInstance, role: Role.findByAuthority("Etudiant")).save(failOnError:true)
 		
+		//On ajoute automatiquement son mur
 		if(etudiantInstance.getMur() == null)
 			etudiantInstance.setMur(new Mur(etudiantInstance))
 		
