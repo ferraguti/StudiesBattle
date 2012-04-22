@@ -110,7 +110,7 @@
 			<h1>Welcome !</h1>
 			<p>Bienvenu sur Studies Battle, le reseau social de l'université Paul Sabatier. Vous trouverez ici les differents parcours proposés par l'université, ainsi que les cours et matières qu'elle dispense.
 			Studies Battle vous permet, entre autre, de donner des cours si vous êtes professeur et de gagner des points en allant a ceux-ci si vous êtes étudiant.
-			Ce réseau social offre aussi la possibilité d'intéragir avec toutes les personnes qui y sont inscrit, au travers de leur "mur".
+			Ce réseau social offre également la possibilité d'intéragir avec toutes les personnes qui y sont inscrit, au travers de leur "mur".
 			</p>
 
 			<br><br>Espace Authentification :

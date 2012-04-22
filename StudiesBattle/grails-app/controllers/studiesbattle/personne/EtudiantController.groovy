@@ -1,7 +1,9 @@
 package studiesbattle.personne
 
-import org.example.UserRole
 import org.example.Role
+import org.example.UserRole
+import studiesbattle.personne.Etudiant
+
 import org.springframework.dao.DataIntegrityViolationException
 
 class EtudiantController {

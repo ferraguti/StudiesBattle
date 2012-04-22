@@ -10,7 +10,7 @@
      </div>
         <div class="body">
 
-			<h1>File Upload:</h1><br>
+			<h1>Upload de fichier:</h1><br>
 
 			 <g:form method="post"  enctype="multipart/form-data">
 	                <div class="dialog">
@@ -18,7 +18,7 @@
 	                        <tbody>
 	                            <tr class="prop">
 	                                <td valign="top" class="name">
-	                                    <label for="fileUpload">Upload:</label>
+	                                    <label for="fileUpload">Fichier :</label>
 	                                </td>
 	                                <td valign="top" class="value ${hasErrors(bean:fileResourceInstance,field:'upload','errors')}">
 	                                    <input type="file" id="fileUpload" name="fileUpload" />
@@ -32,7 +32,7 @@
 	                </div>
 	            </g:form>
 
-            <h1>FileResource List</h1>
+            <h1>Liste des fichiers uploadés</h1>
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
@@ -50,7 +50,6 @@
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
                             <td>${fileResourceInstance.decodeURL()}</td>
                             <td> <input type="text" value="/images/${fileResourceInstance.decodeURL()}"></input></td>
-                            <td><a href="${createLinkTo( dir:'images' , file: fileResourceInstance.decodeURL(), absolute:true )}" target="_new">view</a></td>
                             <td><g:link action="delete" id="${fileResourceInstance.replace('.','###')}" onclick="return confirm('Are you sure?');"> delete </g:link></td>
                         </tr>
                     </g:each>

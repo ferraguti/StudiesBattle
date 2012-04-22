@@ -1,7 +1,7 @@
 package studiesbattle.personne
 
 import org.example.User
-
+import studiesbattle.personne.Mur
 
 class Personne extends User{
 	String nom, prenom, email

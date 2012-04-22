@@ -1,7 +1,6 @@
 package studiesbattle.cours
 
 //Inutilisé
-//Controller qui gère l'upload et le download de fichier
 
 class pageMatiereController {
     

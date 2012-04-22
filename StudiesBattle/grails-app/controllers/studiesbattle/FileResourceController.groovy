@@ -1,7 +1,6 @@
 package studiesbattle
 
-//Inutilisé
-//Controller qui gère l'upload et le download de fichier
+//Controller qui gère l'upload de fichier. Download par encore supporté et pour l'instant toutes les matières partagent le même repertoire
 
 class FileResourceController {
     
@@ -26,19 +25,19 @@ class FileResourceController {
 		def filename = params.id.replace('###', '.')
 		def file = new File( grailsApplication.config.images.location.toString() + File.separatorChar +   filename )
 		file.delete()
-		flash.message = "file ${filename} removed" 
+		flash.message = "Le fichier ${filename} a ete supprimer" 
 		redirect( action:list )
     }
 
 	def upload = {
 		def f = request.getFile('fileUpload')
 	    if(!f.empty) {
-	      flash.message = 'Your file has been uploaded'
+	      flash.message = 'Le fichier ${filename} a ete uploade avec succes'
 		  new File( grailsApplication.config.images.location.toString() ).mkdirs()
 		  f.transferTo( new File( grailsApplication.config.images.location.toString() + File.separatorChar + f.getOriginalFilename() ) )								             			     	
 		}    
 	    else {
-	       flash.message = 'file cannot be empty'
+	       flash.message = 'Le fichier ne peut etre vide'
 	    }
 		redirect( action:list)
 	}
