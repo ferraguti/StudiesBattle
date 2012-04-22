@@ -34,17 +34,15 @@ class BootStrap {
 		}
 		
 		if(!Professeur.count()){
-			new Professeur("Fredou", "1234", "Migeon", "Frederick", "M", 1).save(failOnError: true)
-			new Professeur("JBR", "1234", "Raclet", "JB", "M", 2).save(failOnError: true)
-			new Professeur("Lucky", "1234",  "Pons", "Luc", "M", 3).save(failOnError: true)
+			new Professeur("f_migeon", "1234", "Migeon", "Frederick", "M", 1).save(failOnError: true)
+			new Professeur("jb_raclet", "1234", "Raclet", "JB", "M", 2).save(failOnError: true)
+			new Professeur("l_pons", "1234",  "Pons", "Luc", "M", 3).save(failOnError: true)
 		}
 		
 		if(!Etudiant.count()){
-			new Etudiant("Splinter", "1234",  "Rat", "Le", "M", 6, Parcours.findByNom("Informatique"), 13).save(failOnError: true)
-			new Etudiant("Bonasse", "1234",  "Bonasse", "La", "F", 7, Parcours.findByNom("Biologie"), 20).save(failOnError: true)
-			new Etudiant("BlueBlue", "camilleriforever",  "Lebeau", "Julien", "M", 4, Parcours.findByNom("Informatique"), 23).save(failOnError: true)
-			new Etudiant("Dizamok", "a",  "Ferraguti", "William", "M", 5, Parcours.findByNom("Informatique"), 21).save(failOnError: true)
-			Etudiant.findByUsername("Dizamok").setPoints(50)
+			new Etudiant("l_lebeau", "camilleriforever",  "Lebeau", "Julien", "M", 4, Parcours.findByNom("Informatique"), 23).save(failOnError: true)
+			new Etudiant("w_ferraguti", "a",  "Ferraguti", "William", "M", 5, Parcours.findByNom("Informatique"), 21).save(failOnError: true)
+			Etudiant.findByPrenom("William").setPoints(50)
 		}
 //		
 //		if(!Cours.count()){
