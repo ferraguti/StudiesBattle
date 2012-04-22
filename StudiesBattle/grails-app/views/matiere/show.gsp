@@ -57,7 +57,7 @@
 				<li class="fieldcontain">
 					<span id="page-label" class="property-label"><g:message code="matiere.page.label" default="Page" /></span>
 					
-						<span class="property-value" aria-labelledby="page-label"><g:link controller="pageMatiere" action="list" id="${matiereInstance?.page?.id}">${matiereInstance?.page?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="page-label"><g:link controller="fileResource" action="list" id="${matiereInstance?.page?.id}">${matiereInstance?.page?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

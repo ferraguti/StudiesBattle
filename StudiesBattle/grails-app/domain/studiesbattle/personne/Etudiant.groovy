@@ -1,18 +1,17 @@
 package studiesbattle.personne
 
-import java.util.List;
-
-import studiesbattle.cours.Cours;
+import studiesbattle.badge.Badge
+import studiesbattle.cours.Cours
 import studiesbattle.cours.Parcours
 
 
 class Etudiant extends Personne{
 	int age
 	float points = 0.0f
-	//List badges //inutilisé
+	List badges //inutilisé
 	
 	static belongsTo = [parcours : Parcours]
-	//static hasMany = [badges : Badge]
+	static hasMany = [badges : Badge]
 	
     static constraints = {
 		age nullable: true, min: 13

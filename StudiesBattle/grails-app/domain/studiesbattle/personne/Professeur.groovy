@@ -2,8 +2,6 @@ package studiesbattle.personne
 
 import java.util.List;
 
-import studiesbattle.cours.Cours;
-import studiesbattle.cours.Matiere;
 
 class Professeur extends Personne{	
     static constraints = {

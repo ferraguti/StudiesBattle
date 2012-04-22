@@ -1,7 +1,5 @@
 package org.example
 
-import studiesbattle.personne.Etudiant
-
 class User {
 
 	transient springSecurityService

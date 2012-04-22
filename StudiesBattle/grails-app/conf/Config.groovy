@@ -97,3 +97,4 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'org.example.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'org.example.UserRole'
 grails.plugins.springsecurity.authority.className = 'org.example.Role'
+images.location = './files'
