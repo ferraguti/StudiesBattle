@@ -100,9 +100,9 @@
 		</sec:ifNotLoggedIn>
 		
 		<sec:ifLoggedIn>
-			Logger en temps que : <sec:username /> 
+			Connecter en temps que : <br><sec:username /> 
 			<br>
-			(cliquer <g:link controller="logout">ici</g:link> pour vous deconnecter)	
+			<br>(cliquer <g:link controller="logout">ici</g:link> pour vous deconnecter)	
 		</sec:ifLoggedIn>
 			
 		</div>
