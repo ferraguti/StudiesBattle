@@ -18,7 +18,7 @@
         <r:layoutResources />
 	</head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'stylo-icon.png')}" alt="Grails"/></a>
+		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'stylo-icon3.png')}" alt="Grails"/></a>
 		</div>
 
 		<g:layoutBody/>
